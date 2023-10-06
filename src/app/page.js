@@ -1,95 +1,82 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import Image from "next/legacy/image";
 
+import Plant from "@/components/plant/Plant";
+import classes from "./page.module.css";
+
+import Testimonies from "@/components/testimonies/Testimonies";
+import Button from "@/components/button/Button";
+
+import { DUMMY_DATA } from "@/utils/data";
+import GiftCard from "@/components/giftCard/GiftCard";
+import FrontPageTokens from "@/components/frontPageToken/FrontPageTokens";
+
+const heroImage =
+  "https://images.unsplash.com/photo-1477554193778-9562c28588c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80";
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className={classes.main}>
+      <section className={classes.hero}>
+        <Image
+          priority
+          src={heroImage}
+          layout="fill"
+          object-Fit="cover"
+          quality={100}
+          className={classes.heroImage}
+          alt="hero image of Plant"
+        />
+        <div className={classes.overlayText}>
+          <h2 className={classes.headingOne}>WELCOME TO THE GREENSTORE</h2>
+          <h2 className={classes.headingTwo}>
+            Let’s Bring the Spring to <br /> Your Home
+          </h2>
+          <button className={classes.button}>Shop Now</button>
+        </div>
+      </section>
+      <section className={classes.shop}>
+        <div className={classes.shopHead}>
+          <h3 className={classes.shopHeader}>New Plants</h3>
+          <Button value="Shop Now" />
+        </div>
+        <div className={classes.items}>
+          {DUMMY_DATA.slice(0, 6).map((item) => {
+            return <Plant plant={item} key={item.id} />;
+          })}
+        </div>
+      </section>
+      <div className={classes.story}>
+        <div className={classes.imageContainer}>
+          <Image
+            // src="https://images.unsplash.com/photo-1533090368676-1fd25485db88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80"
+            src="https://images.unsplash.com/photo-1550254469-e77c18c9252b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+            layout="fill"
+            priority
+            className={classes.imageLeftStory}
+            alt="image of cheese plant"
+          />
+        </div>
+        <div className={classes.blurbRight}>
+          <h3 className={classes.blurbFirstTitle}>OUR STORY</h3>
+          <h2 className={classes.blurbSecondTitle}>
+            For People Who Love Plants
+          </h2>
+          <p className={classes.blurbText}>
+            Vivamus quam sociis tristique diam at donec nisl, hendrerit leo nunc
+            at velit lacinia porttitor a nulla tellus ultrices varius aliquet
+            sed in placerat. Facilisis eu faucibus diam cursus pulvinar
+            <br />
+            <br />
+            consectetur purus sem felis, mauris consectetur nisl vitae gravida
+            ultricies sem condimentum aliquet ut sed gravida amet vitae euismod
+            pulvinar volutpat laoreet pharetra.
+          </p>
+          <Button value="Read More" />
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <Testimonies />
+      <GiftCard />
+      <FrontPageTokens />
     </main>
-  )
+  );
 }

@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  justify-content: center;
+  gap: 5%;
+}
+
+.imageBoxLeft {
+  width: 90%;
+  height: 900px;
+}
+
+.mainImageBox {
+  position: relative;
+  height: 80%;
+}
+
+.switchImgButton {
+  display: flex;
+  margin-top: 4%;
+  gap: 4%;
+}
+
+.displayMain {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 1% 0;
+}
+
+.filterButton {
+  display: flex;
+  flex-direction: row;
+  gap: 1%;
+  font-weight: 200;
+  letter-spacing: 0.5px;
+}
+
+.filterButton:nth-child(2n) {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: solid rgba(var(--color-r0)/03) 1px;
+  font-size: 14px;
+  letter-spacing: .3px;
+}
+
+.itemNameTitle {
+  padding: 1% 0;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: .2rem;
+}
+
+.priceTag {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.description {
+  padding: 10px 0 20px;
+  font-weight: 300;
+  word-spacing: 2.8px;
+  font-size: 16px;
+}
+
+
+.boldFilter {
+  font-weight: 500;
+}
+
+.addToCart form {
+  display: flex;
+  vertical-align: middle;
+  gap: 2%;
+}
+
+.addToCartInput {
+  width: 55px;
+  height: 40px;
+  text-align: center;
+  font-size: 16px;
+  border: rgba(var(--color-r0)/03) solid 1px;
+}

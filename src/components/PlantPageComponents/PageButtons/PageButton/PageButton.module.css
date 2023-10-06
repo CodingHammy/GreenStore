@@ -1,0 +1,17 @@
+.button {
+  width: 40px;
+  height: 40px;
+  border: 1px black solid;
+  transition: ease-in 0.3s;
+}
+
+.button:hover {
+  color: white;
+  background-color: black;
+}
+
+.blur {
+  background-color: black;
+  color: white;
+  cursor: auto;
+}

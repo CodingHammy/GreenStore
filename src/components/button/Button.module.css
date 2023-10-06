@@ -1,0 +1,12 @@
+.button {
+  border: var(--color-5);
+  background-color: var(--color-1);
+  color: var(--color-5);
+  font-weight: 600;
+  font-size: 15px;
+  vertical-align: middle;
+}
+
+.button:hover {
+  background-color: rgba(var(--color-r7)/.8);
+}

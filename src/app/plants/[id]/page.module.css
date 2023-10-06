@@ -1,0 +1,11 @@
+.wrapper {
+  padding-top: 60px;
+  background-color: rgba(var(--color-r0)/.3);
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 5% 5%;
+  background-color: var(--color-5);
+}

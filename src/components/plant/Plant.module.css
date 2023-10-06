@@ -1,0 +1,50 @@
+.container {
+  position: relative;
+  height: 75vh;
+  width: 30%;
+  overflow: hidden;
+}
+
+
+.addToCart {
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  right: 30px;
+  background-color: rgba(255 255 255/.5);
+  padding: 4px;
+  border-radius: 50px;
+  box-shadow: 0px 4px 5px rgba(var(--color-r3)/.5);
+  margin-bottom: -36px
+}
+
+.checkoutAdvice {
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  right: 75px;
+  background-color: rgba(0 0 0/.9);
+  padding: 6px 10px 8px 10px;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 13px;
+  align-items: start;
+  border-radius: 5px;
+  letter-spacing: .8px;
+  margin-bottom: -28px;
+
+}
+
+.checkoutAdvice::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-color: transparent rgba(0 0 0/.9);
+  border-width: 5px 0 5px 7px;
+  top: 72%;
+  right: -7px;
+  margin-top: -12px;
+}
