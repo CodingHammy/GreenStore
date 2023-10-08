@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/legacy/image";
 
-import Plant from "@/components/plant/Plant";
 import classes from "./page.module.css";
+
+import Plant from "@/components/plant/Plant";
 
 import Testimonies from "@/components/testimonies/Testimonies";
 import Button from "@/components/button/Button";

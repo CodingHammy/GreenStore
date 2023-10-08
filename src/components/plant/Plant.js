@@ -49,12 +49,14 @@ const Plant = ({ plant }) => {
         <button
           onMouseEnter={adviceEnterHandler}
           onMouseLeave={adviceExitHandler}
+          className={classes.addToCart}
         >
           <Image
             src="/checkout.svg"
-            height={28}
-            width={28}
-            className={classes.addToCart}
+            priority
+            height={20}
+            width={20}
+            className={classes.addToCartImage}
             alt="add to cart icon"
           />
         </button>

@@ -1,0 +1,64 @@
+.container {
+  padding-top: 50px;
+  position: relative;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.subTitle {
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.paragraph {
+  font-weight: 100;
+  font-size: 17.5px;
+  margin-bottom: 30px;
+  font-weight: 300;
+  letter-spacing: .5px;
+}
+
+.imgContainer {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(77 79 72 / 0.5);
+}
+
+.heroImage {
+  object-position: 0 92%;
+}
+
+.textInsideImage {
+  position: absolute;
+  margin: 0 0 0 52%;
+  width: 46%;
+}
+
+
+.textInsideImage_title {
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.textInsideImage_subTitle {
+  width: 70%;
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 20px;
+
+}
+
+.textInsideImage_paragraph {
+  width: 90%;
+  font-size: 22px;
+  font-weight: 300;
+}

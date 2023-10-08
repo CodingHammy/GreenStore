@@ -9,14 +9,17 @@
 .addToCart {
   position: absolute;
   z-index: 1;
-  top: 30px;
-  right: 30px;
+  width: 35px;
+  height: 35px;
+  top: 28px;
+  right: 28px;
   background-color: rgba(255 255 255/.5);
-  padding: 4px;
+  padding: 2px 1px 0 0;
   border-radius: 50px;
   box-shadow: 0px 4px 5px rgba(var(--color-r3)/.5);
-  margin-bottom: -36px
+
 }
+
 
 .checkoutAdvice {
   position: absolute;
