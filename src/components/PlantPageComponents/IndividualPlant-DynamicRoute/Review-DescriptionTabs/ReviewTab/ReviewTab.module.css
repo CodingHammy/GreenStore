@@ -1,0 +1,58 @@
+.reviewsContainer {
+  margin: 20px 0;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.lessBold {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.formBorder {
+  border: solid rgba(var(--color-r0)/03) 1px;
+  padding: 25px 30px;
+  width: 100%;
+}
+
+.gap {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+
+.detailsContainer {
+  display: flex;
+  width: 100%;
+  gap: 6%;
+}
+
+.detailsInput {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+  height: 70px;
+}
+
+.detailsInputWide {
+  width: 100%;
+  height: 120px;
+}
+
+.row {
+  display: flex;
+}
+
+.label {
+  font-weight: 300;
+}
+
+.input {
+  border: 1px solid rgba(var(--color-r0)/03);
+  height: 80px;
+}
+
+.inputTextArea {
+  border: 1px solid rgba(var(--color-r0)/03);
+  height: 100%;
+}

@@ -11,7 +11,8 @@
   z-index: -10;
   aspect-ratio: 65/45;
   /* object-position: 0 -160px; */
-  transform: rotateY(180deg)
+  transform: rotateY(180deg);
+  z-index: -1;
 }
 
 .blurb {
@@ -49,4 +50,6 @@
   font-size: 15px;
   font-weight: 500;
   letter-spacing: .5px;
+
+  z-index: 1;
 }

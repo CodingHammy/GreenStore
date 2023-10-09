@@ -35,14 +35,32 @@ const DescriptionTab = () => {
           </p>
         </div>
       </div>
-      <div>
-        <h2>Sad Plant Signs</h2>
-        <ul>
-          <li>Duis vel ipsum vitae est semper varius in id</li>
-          <li>Class aptent taciti sociosqu</li>
-          <li>Litora torquent per conubia nostra per</li>
-          <li>Inceptos himenaeos praesent</li>
-          <li>Fermentum elit eget</li>
+      <div className={classes.sadPlantDescription}>
+        <h2 className={classes.sadPlantDescription_title}>Sad Plant Signs</h2>
+        <ul className={classes.list}>
+          <li className={classes.listItem}>
+            <span className={classes.spaceFromBullet}>
+              Duis vel ipsum vitae est semper varius in id
+            </span>
+          </li>
+          <li className={classes.listItem}>
+            <span className={classes.spaceFromBullet}>
+              Class aptent taciti sociosqu
+            </span>
+          </li>
+          <li className={classes.listItem}>
+            <span className={classes.spaceFromBullet}>
+              Litora torquent per conubia nostra per
+            </span>
+          </li>
+          <li className={classes.listItem}>
+            <span className={classes.spaceFromBullet}>
+              Inceptos himenaeos praesent
+            </span>
+          </li>
+          <li className={classes.listItem}>
+            <span className={classes.spaceFromBullet}>Fermentum elit eget</span>
+          </li>
         </ul>
       </div>
     </section>
