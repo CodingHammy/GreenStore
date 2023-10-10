@@ -4,8 +4,8 @@ import PageButton from "./PageButton/PageButton";
 
 import classes from "./PageButtons.module.css";
 
-const PageButtons = ({ currentPageValue, onClick, PLANT_DATA }) => {
-  const amountOfPages = Math.ceil(PLANT_DATA.length / 9);
+const PageButtons = ({ currentPageValue, onClick, filteredData }) => {
+  const amountOfPages = Math.ceil(filteredData.length / 9);
 
   return (
     <div className={classes.buttons}>

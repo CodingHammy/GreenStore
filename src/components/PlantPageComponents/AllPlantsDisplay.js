@@ -6,6 +6,16 @@ import PlantButtonList from "@/components/PlantPageComponents/PlantButton-list/P
 import PageButtons from "@/components/PlantPageComponents/PageButtons/PageButtons";
 
 const AllPlantsDisplay = ({ PLANT_DATA, params }) => {
+  let filteredData;
+  if (params !== undefined) {
+    const desiredCategory = params;
+    filteredData = PLANT_DATA.filter((item) =>
+      item.category.includes(desiredCategory)
+    );
+  } else {
+    filteredData = PLANT_DATA;
+  }
+
   const [currentPageValue, setCurrentPageValue] = useState(1);
 
   const [firstItemOnPage, setFirstItemOnPage] = useState(0);
@@ -36,12 +46,12 @@ const AllPlantsDisplay = ({ PLANT_DATA, params }) => {
       setLowerNumberViewingItemsBetween(firstItemOnCurrentPagePlusOne);
       setFirstItemOnPage(firstItemOnCurrentPage);
 
-      if (lastItemOnCurrentPage < PLANT_DATA.length) {
+      if (lastItemOnCurrentPage < filteredData.length) {
         setHigherNumberViewingItemsBetween(lastItemOnCurrentPage);
         setLastItemOnPage(lastItemOnCurrentPage);
       } else {
-        setLastItemOnPage(PLANT_DATA.length);
-        setHigherNumberViewingItemsBetween(PLANT_DATA.length);
+        setLastItemOnPage(filteredData.length);
+        setHigherNumberViewingItemsBetween(filteredData.length);
       }
       scrollTo(0, 0);
       return page;
@@ -64,8 +74,9 @@ const AllPlantsDisplay = ({ PLANT_DATA, params }) => {
               </div>
             )}
             <p>
-              Showing {lowerNumberViewingItemsBetween} -{" "}
-              {higherNumberViewingItemsBetween} of {PLANT_DATA.length} results
+              {filteredData.length > 9
+                ? `Showing ${lowerNumberViewingItemsBetween} - ${higherNumberViewingItemsBetween} of ${filteredData.length} results`
+                : `Showing all ${filteredData.length} results`}
             </p>
           </div>
 
@@ -79,14 +90,16 @@ const AllPlantsDisplay = ({ PLANT_DATA, params }) => {
         <PlantButtonList
           firstItemOnPage={firstItemOnPage}
           lastItemOnPage={lastItemOnPage}
-          PLANT_DATA={PLANT_DATA}
+          filteredData={filteredData}
           params={params}
         />
-        <PageButtons
-          currentPageValue={currentPageValue}
-          PLANT_DATA={PLANT_DATA}
-          onClick={handleClickForChangeOfPageButtons}
-        />
+        {filteredData.length > 9 && (
+          <PageButtons
+            currentPageValue={currentPageValue}
+            filteredData={filteredData}
+            onClick={handleClickForChangeOfPageButtons}
+          />
+        )}
       </div>
     </main>
   );
