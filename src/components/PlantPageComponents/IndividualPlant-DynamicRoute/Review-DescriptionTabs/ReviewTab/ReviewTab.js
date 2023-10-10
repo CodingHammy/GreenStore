@@ -7,7 +7,7 @@ import classes from "./ReviewTab.module.css";
 const ReviewTab = () => {
   return (
     <section className={classes.reviewsContainer}>
-      <p>There are no Reviews yet.</p>
+      <p className={classes.noReviews}>There are no Reviews yet.</p>
       <div className={classes.formBorder}>
         <form action="" className={classes.gap}>
           <h2>Be the first to review “Alocasia Regal Shield”</h2>

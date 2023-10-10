@@ -9,6 +9,11 @@
   font-size: 18px;
 }
 
+.noReviews {
+  padding-bottom: 20px;
+  font-weight: 200;
+}
+
 .formBorder {
   border: solid rgba(var(--color-r0)/03) 1px;
   padding: 25px 30px;
