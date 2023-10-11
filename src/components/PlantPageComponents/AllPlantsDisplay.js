@@ -64,28 +64,30 @@ const AllPlantsDisplay = ({ PLANT_DATA, params }) => {
           <div className={classes.headerText}>
             <p>Home / Shop</p>
             {params !== undefined && (
-              <div>
-                <h2>{params}</h2>
-                <p>
+              <div className={classes.divForFilteredCatergory}>
+                <h2 className={classes.headerForFiltedCategory}>{params}</h2>
+                <p className={classes.paragraphForFilteredCatergory}>
                   Quisque nulla egestas integer mauris, vestibulum mattis fames
                   lobortis sed sollicitudin suscipit lobortis magna suspendisse
                   fames
                 </p>
               </div>
             )}
-            <p>
-              {filteredData.length > 9
-                ? `Showing ${lowerNumberViewingItemsBetween} - ${higherNumberViewingItemsBetween} of ${filteredData.length} results`
-                : `Showing all ${filteredData.length} results`}
-            </p>
-          </div>
+            <div className={classes.clientPageAndFilter}>
+              <p className={classes.showingPage}>
+                {filteredData.length > 9
+                  ? `Showing ${lowerNumberViewingItemsBetween} - ${higherNumberViewingItemsBetween} of ${filteredData.length} results`
+                  : `Showing all ${filteredData.length} results`}
+              </p>
 
-          <select name="filter" id="filter" className={classes.filter}>
-            <option value="by age" className={classes.options}>
-              by age
-            </option>
-          </select>
-          {/* still need to work on filter */}
+              <select name="filter" id="filter" className={classes.filter}>
+                <option value="by age" className={classes.options}>
+                  by age
+                </option>
+              </select>
+              {/* still need to work on filter */}
+            </div>
+          </div>
         </div>
         <PlantButtonList
           firstItemOnPage={firstItemOnPage}

@@ -16,7 +16,9 @@ const ReviewTab = () => {
             *
           </p>
           <div>
-            <p>Your rating * ⭐⭐⭐⭐⭐ </p>
+            <p className={classes.yourRating}>
+              Your rating * <span className={classes.rating}>★★★✰✰</span>
+            </p>
           </div>
           <div
             className={`${classes.detailsInput} ${classes.detailsInputWide}`}

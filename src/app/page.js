@@ -8,7 +8,7 @@ import Plant from "@/components/plant/Plant";
 import Testimonies from "@/components/testimonies/Testimonies";
 import Button from "@/components/button/Button";
 
-import { DUMMY_DATA } from "@/utils/data";
+import { PLANT_DATA } from "@/utils/format";
 import GiftCard from "@/components/giftCard/GiftCard";
 import FrontPageTokens from "@/components/frontPageToken/FrontPageTokens";
 
@@ -41,7 +41,7 @@ export default function Home() {
           <Button value="Shop Now" />
         </div>
         <div className={classes.items}>
-          {DUMMY_DATA.slice(0, 6).map((item) => {
+          {PLANT_DATA.slice(0, 6).map((item) => {
             return <Plant plant={item} key={item.id} />;
           })}
         </div>

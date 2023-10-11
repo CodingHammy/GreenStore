@@ -39,12 +39,13 @@ const Plant = ({ plant }) => {
           alt={`image of ${plant.title}`}
         />
       </Link>
-      <br />
+      <p className={classes.rating}>★★★✰✰{plant.rating}</p>
       <Link href={plant.src} className={classes.title}>
         {plant.title}
       </Link>
       <p className={classes.category}>{plant.category[0]}</p>
-      <p className={classes.price}>${plant.price}</p>
+      <p className={classes.price}>{plant.price}</p>
+
       {checkoutIsShown && (
         <button
           onMouseEnter={adviceEnterHandler}

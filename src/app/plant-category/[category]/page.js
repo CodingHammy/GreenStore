@@ -3,7 +3,7 @@ import React from "react";
 
 import classes from "./page.module.css";
 
-import { PLANT_DATA } from "@/app/plants/page";
+import { PLANT_DATA } from "@/utils/format";
 import AllPlantsDisplay from "@/components/PlantPageComponents/AllPlantsDisplay";
 
 const PlantCategory = ({ params }) => {

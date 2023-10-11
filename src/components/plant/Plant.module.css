@@ -1,7 +1,6 @@
 .container {
   position: relative;
-  height: 75vh;
-  width: 30%;
+  margin: 40px 0;
   overflow: hidden;
 }
 
@@ -50,4 +49,33 @@
   top: 72%;
   right: -7px;
   margin-top: -12px;
+}
+
+
+.title,
+.category {
+  margin-bottom: 5px;
+}
+
+.rating {
+  display: flex;
+  padding-top: 6px;
+  font-size: 22px;
+  margin-bottom: 3px;
+}
+
+.title {
+  display: flex;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.category {
+  font-weight: 100;
+  font-size: 14px;
+  color: var(--color-3);
+}
+
+.price {
+  font-weight: 500;
 }

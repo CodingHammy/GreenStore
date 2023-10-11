@@ -3,27 +3,57 @@
   padding: 60px 0;
 }
 
+.wrapper {
+  width: 1400px;
+  position: relative;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
 .header {
   display: flex;
-  height: 150px;
   justify-content: space-between;
+
   margin: 0 7.5% 0 7.5%;
+  padding: 60px 0 10px;
   align-items: center;
 }
 
 .headerText {
+  width: 100%;
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
-
   margin-top: 10px;
 }
 
-.wrapper {
-  /* padding: 100px 0; */
-  width: 1400px;
-  margin: 0 auto;
-  background-color: #fff;
+.clientPageAndFilter {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 15px 0 30px;
+  font-weight: 500;
 }
+
+.showingPage {
+  display: flex;
+  align-items: center;
+}
+
+
+.divForFilteredCatergory {}
+
+.headerForFiltedCategory {
+  font-size: 60px;
+  font-weight: 300;
+  margin: 10px -3px 50px;
+}
+
+.paragraphForFilteredCatergory {
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
 
 
 .filter {

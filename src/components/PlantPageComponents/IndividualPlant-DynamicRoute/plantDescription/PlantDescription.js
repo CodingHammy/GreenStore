@@ -69,12 +69,7 @@ const PlantDescription = ({ data }) => {
         <div className={classes.filterButton}>{filteringPlantLinks}</div>
         <h2 className={classes.itemNameTitle}>{data.title}</h2>
         <p>
-          <span className={classes.priceTag}>
-            {Intl.NumberFormat("en-nz", {
-              style: "currency",
-              currency: "nzd",
-            }).format(data.price)}
-          </span>
+          <span className={classes.priceTag}>{data.price}</span>
           {` + Free Shipping`}
         </p>
         <p className={classes.description}>
