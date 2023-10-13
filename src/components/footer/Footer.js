@@ -12,8 +12,8 @@ const Footer = () => {
         <div className={classes.links}>
           <Link href="#">Home</Link>
           <Link href="/plants">Plants</Link>
-          <Link href="#">About</Link>
-          <Link href="#">Contact</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
         </div>
       </div>
       <div className={classes.subscribe}>

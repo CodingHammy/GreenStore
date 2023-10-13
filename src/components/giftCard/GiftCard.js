@@ -1,7 +1,11 @@
+"use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/legacy/image";
 import classes from "./GiftCard.module.css";
 const GiftCard = () => {
+  const router = useRouter();
+  const redirectHandler = () => router.push("/checkout");
   return (
     <div className={classes.container}>
       <Image
@@ -20,7 +24,9 @@ const GiftCard = () => {
           Pretium tortor risus enim neque quis pellentesque maecenas proin odio
           eget arcu
         </p>
-        <button className={classes.button}>Purchase A Gift Card</button>
+        <button className={classes.button} onClick={redirectHandler}>
+          Purchase A Gift Card
+        </button>
       </div>
     </div>
   );

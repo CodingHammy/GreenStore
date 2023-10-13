@@ -1,0 +1,76 @@
+.story_section {
+  display: flex;
+  width: 100%;
+  margin-bottom: 120px;
+}
+
+.story_left {
+  width: 32%;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+.story_right {
+  width: 68%;
+
+  margin: 0px 0 0 0;
+}
+
+.borderBottom {
+  width: 70px;
+  border-bottom: var(--color-1) solid 2px;
+}
+
+
+.story_paragraph {
+  letter-spacing: 0.8px;
+  font-weight: 300;
+  font-size: 16px;
+  word-spacing: 3px;
+  line-height: 25px;
+  letter-spacing: 1.2px;
+  width: 85%;
+  margin-bottom: 50px;
+}
+
+
+.nameTag_section {
+  display: flex;
+  gap: 15px;
+}
+
+.testimonial {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  line-height: 28px;
+  width: 80%;
+}
+
+.nameTag_right {
+  margin-top: 6px;
+  word-spacing: 2px;
+}
+
+.nameTag_name {
+  font-weight: 400;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+}
+
+.nameTag_jobPostion {
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  line-height: 1.5;
+  color: rgba(var(--color-r3)/.7);
+  margin-left: 1px;
+}
+
+
+.nameTag_owner_image {
+  border-radius: 50px;
+  margin: 5px 0 -5px 0;
+}

@@ -15,7 +15,7 @@ const NavBar = () => {
         <Link href="/plants">Plants</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
-        <Link href="#">
+        <Link href="/checkout">
           <div className={classes.checkout}>
             <p className={classes.price}>$0.00</p>
             <Image

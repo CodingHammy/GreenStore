@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 0 100px 0;
+  height: 800px;
+}
+
+
+.image_container {
+  position: relative;
+  width: 32%;
+  aspect-ratio: 1/1;
+  margin: auto;
+}
+
+
+.image {
+  display: block;
+}
