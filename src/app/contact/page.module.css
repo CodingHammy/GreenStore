@@ -6,12 +6,12 @@
 
 .text_left {
   width: 50%;
-  height: 20px;
+  height: 500px;
   background: red;
 }
 
 .text_right {
   width: 50%;
-  height: 20px;
+  height: 500px;
   background: blue;
 }
