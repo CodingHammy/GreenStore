@@ -1,48 +1,9 @@
 .text_container {
   display: flex;
   width: 1300px;
-  margin: 80px auto 60px;
+  margin: 60px auto;
 }
 
-.text_left {
-  width: 50%;
-  border-right: solid 1px rgba(var(--color-r6)/0.2);
-}
-
-.text_right {
-  width: 50%;
-  margin-left: 5%;
-
-
-}
-
-.svgFlip {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
-
-.contactSection {
-  display: flex;
-  width: 92%;
-  flex-direction: column;
-  gap: 35px;
-  margin-bottom: 30px;
-  border-bottom: solid 1px rgba(var(--color-r6)/0.2);
-  padding-bottom: 30px;
-}
-
-.optionsForContact {
-  display: flex;
-}
-
-.optionsForContactText {
-  display: flex;
-  flex-direction: column;
-}
-
-.linksIcons {
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
-  gap: 20px;
+.input {
+  height: 30px;
 }
