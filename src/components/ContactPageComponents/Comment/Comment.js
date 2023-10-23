@@ -9,11 +9,17 @@ const Comment = () => {
     <div className={classes.container}>
       <h2 className={classes.heading}>Drop us a line or two</h2>
       <form action="submit">
-        <label htmlFor="name">Name</label>
+        <label className={classes.label} htmlFor="name">
+          Name
+        </label>
         <input type="text" id="name" name="name" className={classes.input} />
-        <label htmlFor="email">Email</label>
+        <label className={classes.label} htmlFor="email">
+          Email
+        </label>
         <input type="email" id="email" name="email" className={classes.input} />
-        <label htmlFor="comment">Comment or Message</label>
+        <label className={classes.label} htmlFor="comment">
+          Comment or Message
+        </label>
         <textarea
           name="comment"
           id="comment"
