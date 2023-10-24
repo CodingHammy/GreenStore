@@ -1,9 +1,10 @@
 .text_container {
   display: flex;
-  width: 1300px;
+  max-width: 1300px;
   margin: 60px auto;
 }
 
-.input {
-  height: 30px;
+.mapbox_contianer {
+  max-width: 100%;
+  overflow: hidden;
 }

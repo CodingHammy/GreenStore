@@ -8,5 +8,5 @@
 }
 
 .button:hover {
-  background-color: rgba(var(--color-r7)/.8);
+  background-color: rgba(var(--color-r3)/.8);
 }
