@@ -23,6 +23,11 @@
   justify-content: space-between;
 }
 
+.checkout_button {
+  width: auto;
+}
+
+
 .checkout {
   display: flex;
   flex-direction: row;
@@ -42,7 +47,7 @@
   right: -10px;
   bottom: 12px;
   background-color: var(--color-4);
-  padding: 0 0 18px 5px;
+  padding: 0 0 18px 0;
   border-radius: 50%;
   height: 15px;
   width: 17px;
