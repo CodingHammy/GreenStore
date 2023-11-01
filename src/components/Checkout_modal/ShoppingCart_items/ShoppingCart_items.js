@@ -1,19 +1,33 @@
 import React from "react";
-
+import Image from "next/image";
 import classes from "./ShoppingCart_items.module.css";
 
-const ShoppingCart_items = () => {
+const ShoppingCart_items = ({ PLANT_DATA }) => {
   return (
-    <main>
-      <Image src={"#"} height={100} width={100} />
-      <div>
-        <h3>Plant Name</h3>
-        <p>
-          {`num`} x {`$299.99`}
-        </p>
+    <main className={classes.container}>
+      <div className={classes.left}>
+        <Image
+          style={{ objectFit: "cover" }}
+          src={PLANT_DATA.src[0]}
+          height={70}
+          width={70}
+          alt={`image of ${PLANT_DATA.title}`}
+        />
+        <div className={classes.col}>
+          <h3>{PLANT_DATA.title}</h3>
+          <p>
+            {PLANT_DATA.id} x {PLANT_DATA.price}
+          </p>
+        </div>
       </div>
-      <button>
-        <Image src={"#"} width={20} height={20} />
+      <button className={classes.button}>
+        <Image
+          className={classes.circle}
+          src={"/cross.svg"}
+          width={20}
+          height={20}
+          alt={"delete item button"}
+        />
       </button>
     </main>
   );

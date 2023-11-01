@@ -1,10 +1,11 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/legacy/image";
 
 import classes from "./navbar.module.css";
 
-const NavBar = () => {
+const NavBar = ({ handleCheckoutModalTrue }) => {
   return (
     <div className={classes.container}>
       <Link href="/" className={classes.logo}>
@@ -15,7 +16,10 @@ const NavBar = () => {
         <Link href="/plants">Plants</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
-        <Link href="/checkout">
+        <button
+          className={classes.checkout_button}
+          onClick={handleCheckoutModalTrue}
+        >
           <div className={classes.checkout}>
             <p className={classes.price}>$0.00</p>
             <Image
@@ -27,7 +31,7 @@ const NavBar = () => {
             />
             <p className={classes.amount}>2</p>
           </div>
-        </Link>
+        </button>
         <Link href="#">
           <Image
             src="/profile.svg"

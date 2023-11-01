@@ -1,0 +1,30 @@
+.container {
+  position: relative;
+  display: flex;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.left {
+  display: flex;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  gap: 5px;
+}
+
+.button {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  width: 0;
+
+}
+
+.circle {
+  border: 1px solid black;
+  border-radius: 50%;
+}
