@@ -1,12 +1,17 @@
 "use client";
 import React from "react";
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/legacy/image";
+
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "./../../redux/features/cartSlice";
 
 import classes from "./Plant.module.css";
 
 const Plant = ({ plant }) => {
+  const dispatch = useDispatch();
+
   const [checkoutIsShown, setCheckoutIsShown] = useState(false);
   const [adviceIsShown, setAdviceIsShown] = useState(false);
 
@@ -22,6 +27,17 @@ const Plant = ({ plant }) => {
   };
   const adviceExitHandler = () => {
     setAdviceIsShown(false);
+  };
+
+  const handleAddItem = () => {
+    dispatch(
+      addItem({
+        name: plant.title,
+        amount: 1,
+        image: plant.src[0],
+        price: plant.price,
+      })
+    );
   };
 
   return (
@@ -52,6 +68,7 @@ const Plant = ({ plant }) => {
           onMouseEnter={adviceEnterHandler}
           onMouseLeave={adviceExitHandler}
           className={classes.addToCart}
+          onClick={handleAddItem}
         >
           <Image
             src="/checkout.svg"

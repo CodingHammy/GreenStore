@@ -2,21 +2,21 @@ import React from "react";
 import Image from "next/image";
 import classes from "./ShoppingCart_items.module.css";
 
-const ShoppingCart_items = ({ PLANT_DATA }) => {
+const ShoppingCart_items = ({ cartItem }) => {
   return (
     <main className={classes.container}>
       <div className={classes.left}>
         <Image
           style={{ objectFit: "cover" }}
-          src={PLANT_DATA.src[0]}
+          src={cartItem.image}
           height={70}
           width={70}
-          alt={`image of ${PLANT_DATA.title}`}
+          alt={`image of ${cartItem.title}`}
         />
         <div className={classes.col}>
-          <h3 className={classes.title}>{PLANT_DATA.title}</h3>
+          <h3 className={classes.title}>{cartItem.name}</h3>
           <p className={classes.price}>
-            {PLANT_DATA.id} x {PLANT_DATA.price}
+            {cartItem.amount} x {cartItem.price}
           </p>
         </div>
       </div>
