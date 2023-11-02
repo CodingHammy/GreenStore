@@ -14,8 +14,8 @@ const ShoppingCart_items = ({ PLANT_DATA }) => {
           alt={`image of ${PLANT_DATA.title}`}
         />
         <div className={classes.col}>
-          <h3>{PLANT_DATA.title}</h3>
-          <p>
+          <h3 className={classes.title}>{PLANT_DATA.title}</h3>
+          <p className={classes.price}>
             {PLANT_DATA.id} x {PLANT_DATA.price}
           </p>
         </div>

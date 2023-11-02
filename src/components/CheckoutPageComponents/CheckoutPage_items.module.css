@@ -1,0 +1,4 @@
+.circle {
+  border: solid 1px var(--color-6);
+  border-radius: 50%;
+}
