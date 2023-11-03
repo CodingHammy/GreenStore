@@ -3,12 +3,18 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/legacy/image";
 
-import Button from "@/components/button/Button";
-
 import classes from "./PlantDescription.module.css";
 
+import { addItem } from "@/redux/features/cartSlice";
+
+import { useDispatch } from "react-redux";
+
+import Button from "@/components/button/Button";
+
 const PlantDescription = ({ data }) => {
+  const dispatch = useDispatch();
   const [mainImageDisplay, setMainImageDisplay] = useState(0);
+  const [plantAddNumber, setPlantAddNumber] = useState(1);
 
   const filteringPlantLinks = data.category.map((item, index) => {
     const hrefItem = item.split(" ").join("-");
@@ -19,6 +25,36 @@ const PlantDescription = ({ data }) => {
       </Link>
     );
   });
+
+  const handleInputChange_addToCart = (e) => {
+    e.preventDefault();
+    setPlantAddNumber(parseInt(e.target.value));
+  };
+
+  const handleSubmit_AddToCart = (e) => {
+    if (!isNaN(plantAddNumber) && parseInt(e.target.value) > 0) {
+      e.preventDefault();
+      setPlantAddNumber(1);
+      dispatch(
+        addItem({
+          name: data.title,
+          amount: plantAddNumber,
+          image: data.src[0],
+          price: data.price,
+        })
+      );
+      setPlantAddNumber(1);
+    } else {
+      console.error("please enter a valid number");
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); // Prevent default form submission
+      handleSubmit_AddToCart(e); // Call the submit function when Enter is pressed
+    }
+  };
 
   const setImageClickHandler = (imgIndex) => {
     setMainImageDisplay(imgIndex);
@@ -80,13 +116,20 @@ const PlantDescription = ({ data }) => {
           enim nunc ac egestas elementum ut in ornare sit malesuada.
         </p>
         <div className={classes.addToCart}>
-          <form action="">
+          <form action="" onSubmit={handleSubmit_AddToCart}>
             <input
               type="number"
-              placeholder="1"
+              value={plantAddNumber}
               className={classes.addToCartInput}
+              onChange={handleInputChange_addToCart}
+              onKeyDown={handleKeyPress}
             />
-            <Button value="Add To Cart" height="40px" width="250px" />
+            <Button
+              value="Add To Cart"
+              height="40px"
+              width="250px"
+              type="submit"
+            />
           </form>
         </div>
         <p className={classes.filterButton}>

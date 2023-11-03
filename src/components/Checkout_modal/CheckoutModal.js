@@ -7,7 +7,7 @@ import Button from "../button/Button";
 import ShoppingCart_items from "./ShoppingCart_items/ShoppingCart_items";
 
 import { useRouter } from "next/navigation";
-import { PLANT_DATA } from "@/utils/format";
+
 import { useSelector } from "react-redux";
 
 const CheckoutModal = ({ handleCheckoutModalfalse }) => {
@@ -18,8 +18,6 @@ const CheckoutModal = ({ handleCheckoutModalfalse }) => {
   }).format(299.89);
 
   const cartItems = useSelector((state) => state.cart.items);
-
-  console.log(cartItems);
 
   const handleViewCheckout = () => {
     handleCheckoutModalfalse();

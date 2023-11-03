@@ -1,8 +1,21 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import classes from "./ShoppingCart_items.module.css";
 
+import { deleteAllItem } from "@/redux/features/cartSlice";
+import { useDispatch } from "react-redux";
+
 const ShoppingCart_items = ({ cartItem }) => {
+  const dispatch = useDispatch();
+  const handleDeleteItem = () => {
+    dispatch(
+      deleteAllItem({
+        name: cartItem.name,
+      })
+    );
+  };
+
   return (
     <main className={classes.container}>
       <div className={classes.left}>
@@ -20,7 +33,7 @@ const ShoppingCart_items = ({ cartItem }) => {
           </p>
         </div>
       </div>
-      <button className={classes.button}>
+      <button className={classes.button} onClick={handleDeleteItem}>
         <Image
           className={classes.circle}
           src={"/cross.svg"}

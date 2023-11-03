@@ -1,16 +1,23 @@
+"use client";
 import React from "react";
 
 import classes from "./page.module.css";
 
 import CheckoutPage_items from "@/components/CheckoutPageComponents/CheckoutPage_items";
-import { PLANT_DATA } from "@/utils/format";
+
+import { useSelector } from "react-redux";
 
 const page = () => {
+  const cartItems = useSelector((state) => state.cart.items);
+  // const cartItems = useSelector((state) => state.cart.items);
+
+  console.log(cartItems);
+
   return (
     <main className={classes.wrapper}>
       <section className={classes.container}>
         <h3>cart</h3>
-        <tabel>
+        <table>
           <tr>
             <th>{null}</th>
             <th>Product name</th>
@@ -18,16 +25,11 @@ const page = () => {
             <th>Quantity</th>
             <th>Sub Total</th>
           </tr>
-          <tr>
-            <CheckoutPage_items PLANT_DATA={PLANT_DATA[0]} />
-          </tr>
-          <tr>
-            <CheckoutPage_items PLANT_DATA={PLANT_DATA[5]} />
-          </tr>
-          <tr>
-            <CheckoutPage_items PLANT_DATA={PLANT_DATA[19]} />
-          </tr>
-        </tabel>
+
+          {cartItems.map(
+            (item) => (item = <CheckoutPage_items cartItems={item} />)
+          )}
+        </table>
       </section>
       ;
     </main>

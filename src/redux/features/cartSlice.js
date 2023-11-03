@@ -14,6 +14,7 @@ const cartSlice = createSlice({
       const existingItem = state.items.find((item) => item.name === name);
       if (existingItem) {
         existingItem.amount += amount;
+        console.log(existingItem.amount);
       } else {
         state.items.push({ name, amount, image, price });
       }
