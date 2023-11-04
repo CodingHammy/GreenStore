@@ -9,27 +9,30 @@ import { useSelector } from "react-redux";
 
 const page = () => {
   const cartItems = useSelector((state) => state.cart.items);
-  // const cartItems = useSelector((state) => state.cart.items);
-
-  console.log(cartItems);
 
   return (
     <main className={classes.wrapper}>
       <section className={classes.container}>
-        <h3>cart</h3>
-        <table>
-          <tr>
-            <th>{null}</th>
-            <th>Product name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Sub Total</th>
-          </tr>
+        <h3 className={classes.mainTitle}>Cart</h3>
+        <div className={classes.form}>
+          <div className={classes.titles}>
+            <h6 className={classes.catergory_title_quarter}>{null}</h6>
+            <h6 className={classes.catergory_title_threeQuarter}>{null}</h6>
+            <h6 className={classes.catergory_title_productName}>
+              Product name
+            </h6>
+            <h6 className={classes.catergory_title}>Price</h6>
+            <h6 className={classes.catergory_title}>Quantity</h6>
+            <h6 className={classes.catergory_title}>Sub Total</h6>
+          </div>
 
-          {cartItems.map(
+          {cartItems.map((item) => (
+            <CheckoutPage_items cartItems={item} />
+          ))}
+          {/* {PLANT_DATA.slice(0, 5).map(
             (item) => (item = <CheckoutPage_items cartItems={item} />)
-          )}
-        </table>
+          )} */}
+        </div>
       </section>
       ;
     </main>

@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 
 const ShoppingCart_items = ({ cartItem }) => {
   const dispatch = useDispatch();
+
   const handleDeleteItem = () => {
     dispatch(
       deleteAllItem({

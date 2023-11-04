@@ -6,12 +6,14 @@ import { useState } from "react";
 
 import classes from "./CheckoutPage_items.module.css";
 
-const CheckoutPage_items = ({ cartItems }) => {
-  const number = Number(cartItems.price.replace(/[^0-9.-]+/g, ""));
+import { deleteAllItem } from "@/redux/features/cartSlice";
+import { useDispatch } from "react-redux";
 
+const CheckoutPage_items = ({ cartItems }) => {
+  const dispatch = useDispatch();
+  const number = Number(cartItems.price.replace(/[^0-9.-]+/g, ""));
   const [inputValue, setInputValue] = useState("0"); // Initial value will be replaced with the amount of plants that had been added to cart
 
-  //need to connect the slice with the input value
   useEffect(() => {
     setInputValue(cartItems.amount);
   }, []);
@@ -21,45 +23,59 @@ const CheckoutPage_items = ({ cartItems }) => {
     setInputValue(event.target.value);
   };
 
-  console.log(cartItems);
+  const handleDeleteItem = () => {
+    dispatch(
+      deleteAllItem({
+        name: cartItems.name,
+      })
+    );
+  };
 
   return (
     <Fragment>
-      <tr>
-        <td>
-          <Image
-            className={classes.circle}
-            src={"/cross.svg"}
-            width={20}
-            height={20}
-            alt={"delete item button"}
-          />
+      <div className={classes.titles}>
+        <div className={classes.catergory_title_quarter}>
+          <button className={classes.button}>
+            <Image
+              className={classes.circle}
+              src={"/cross.svg"}
+              width={20}
+              height={20}
+              alt={"delete item button"}
+              onClick={handleDeleteItem}
+            />
+          </button>
+        </div>
+        <div className={classes.catergory_title_threeQuarter}>
           <Image
             src={cartItems.image}
-            style={{ objectFit: "cover" }}
-            height={70}
-            width={70}
+            style={{ objectFit: "contain" }}
+            height={100}
+            width={100}
             alt={`image of ${cartItems.title}`}
           />
-        </td>
-        <td>{cartItems.name}</td>
-        <td>{cartItems.price}</td>
-        <td>
+        </div>
+        <h6 className={classes.catergory_title_productName}>
+          {cartItems.name}
+        </h6>
+        <h6 className={classes.catergory_title}>{cartItems.price}</h6>
+        <div className={classes.catergory_title}>
           <form action="">
             <input
               type="number"
               value={inputValue}
               onChange={handleInputChange}
+              className={classes.input}
             />
           </form>
-        </td>
-        <td>
+        </div>
+        <h6 className={classes.catergory_title}>
           {Intl.NumberFormat("en-nz", {
             style: "currency",
             currency: "nzd",
           }).format(inputValue * number)}
-        </td>
-      </tr>
+        </h6>
+      </div>
     </Fragment>
   );
 };

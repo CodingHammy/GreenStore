@@ -32,8 +32,8 @@ const PlantDescription = ({ data }) => {
   };
 
   const handleSubmit_AddToCart = (e) => {
-    if (!isNaN(plantAddNumber) && parseInt(e.target.value) > 0) {
-      e.preventDefault();
+    e.preventDefault();
+    if (!isNaN(plantAddNumber) && plantAddNumber > 0) {
       setPlantAddNumber(1);
       dispatch(
         addItem({
@@ -43,9 +43,9 @@ const PlantDescription = ({ data }) => {
           price: data.price,
         })
       );
-      setPlantAddNumber(1);
     } else {
-      console.error("please enter a valid number");
+      console.log("please enter a valid number");
+      setPlantAddNumber(1);
     }
   };
 
