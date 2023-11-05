@@ -5,7 +5,13 @@ import Image from "next/legacy/image";
 
 import classes from "./navbar.module.css";
 
+import { useSelector } from "react-redux";
+import { selectTotalPrice } from "@/redux/features/selectTotals";
+import { selectTotalQuantity } from "@/redux/features/selectTotals";
+
 const NavBar = ({ handleCheckoutModalTrue }) => {
+  const grandTotal = useSelector(selectTotalPrice);
+  const grandQuantity = useSelector(selectTotalQuantity);
   return (
     <div className={classes.container}>
       <Link href="/" className={classes.logo}>
@@ -21,7 +27,7 @@ const NavBar = ({ handleCheckoutModalTrue }) => {
           onClick={handleCheckoutModalTrue}
         >
           <div className={classes.checkout}>
-            <p className={classes.price}>$0.00</p>
+            <p className={classes.price}>{grandTotal}</p>
             <Image
               src="/checkout.svg"
               height={15}
@@ -29,7 +35,7 @@ const NavBar = ({ handleCheckoutModalTrue }) => {
               className={classes.icon}
               alt="checkout icon"
             />
-            <p className={classes.amount}>2</p>
+            <p className={classes.amount}>{grandQuantity}</p>
           </div>
         </button>
         <Link href="#">

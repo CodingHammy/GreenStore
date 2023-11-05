@@ -9,19 +9,19 @@ import classes from "./CheckoutPage_items.module.css";
 import { deleteAllItem } from "@/redux/features/cartSlice";
 import { useDispatch } from "react-redux";
 
-const CheckoutPage_items = ({ cartItems }) => {
+const CheckoutPage_items = ({ cartItems, onUpdateItem }) => {
   const dispatch = useDispatch();
   const number = Number(cartItems.price.replace(/[^0-9.-]+/g, ""));
-  const [inputValue, setInputValue] = useState("0"); // Initial value will be replaced with the amount of plants that had been added to cart
+  const [inputValue, setInputValue] = useState(0); // Initial value will be replaced with the amount of plants that had been added to cart
 
   useEffect(() => {
     setInputValue(cartItems.amount);
   }, []);
 
-  const handleInputChange = (event) => {
-    // Update the state with the new input value
-    setInputValue(event.target.value);
-  };
+  // const handleInputChange = (event) => {
+  //   // Update the state with the new input value
+  //   setInputValue(event.target.value);
+  // };
 
   const handleDeleteItem = () => {
     dispatch(
@@ -29,6 +29,15 @@ const CheckoutPage_items = ({ cartItems }) => {
         name: cartItems.name,
       })
     );
+  };
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+    onUpdateItem(
+      { name: cartItems.name },
+      { amount: parseInt(event.target.value) }
+    );
+    console.log(typeof event.target.value);
   };
 
   return (
