@@ -10,12 +10,12 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      const { name, amount, image, price } = action.payload;
+      const { name, amount, image, price, id } = action.payload;
       const existingItem = state.items.find((item) => item.name === name);
       if (existingItem) {
         existingItem.amount += amount;
       } else {
-        state.items.push({ name, amount, image, price });
+        state.items.push({ name, amount, image, price, id });
       }
     },
     removeItem: (state, action) => {
@@ -37,10 +37,11 @@ const cartSlice = createSlice({
     },
     updateCart: (state, action) => {
       const { name, amount } = action.payload;
-      state.items.forEach((item) => console.log("amount:", item.amount));
+      console.log(name, amount);
       const existingItem = state.items.find((item) => item.name === name);
+
       if (existingItem) {
-        existingItem.amount = amount;
+        existingItem.amount = parseInt(amount);
       }
     },
   },

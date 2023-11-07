@@ -1,57 +1,44 @@
 "use client";
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import Image from "next/image";
-
-import { useState } from "react";
 
 import classes from "./CheckoutPage_items.module.css";
 
-import { deleteAllItem } from "@/redux/features/cartSlice";
-import { useDispatch } from "react-redux";
-
-const CheckoutPage_items = ({ cartItems, onUpdateItem }) => {
-  const dispatch = useDispatch();
+const CheckoutPage_items = ({
+  cartItems,
+  formRef,
+  handleDeleteItem,
+  amountInputValue,
+  setAmountInputValue,
+}) => {
   const number = Number(cartItems.price.replace(/[^0-9.-]+/g, ""));
-  const [inputValue, setInputValue] = useState(0); // Initial value will be replaced with the amount of plants that had been added to cart
+  // const [amountInputValue, setAmountInputValue] = useState(0); // Initial value will be replaced with the amount of plants that had been added to cart
 
-  useEffect(() => {
-    setInputValue(cartItems.amount);
-  }, []);
-
-  // const handleInputChange = (event) => {
-  //   // Update the state with the new input value
-  //   setInputValue(event.target.value);
-  // };
-
-  const handleDeleteItem = () => {
-    dispatch(
-      deleteAllItem({
-        name: cartItems.name,
-      })
-    );
-  };
+  // useEffect(() => {
+  //   setAmountInputValue(cartItems.amount);
+  // }, []);
 
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-    onUpdateItem(
-      { name: cartItems.name },
-      { amount: parseInt(event.target.value) }
-    );
-    console.log(typeof event.target.value);
+    event.preventDefault();
+    setAmountInputValue(event.target.value);
+  };
+  //used to update the value and save info
+
+  const onDeleteItemClick = () => {
+    handleDeleteItem(cartItems.name); // Pass both name and formRef to the parent
   };
 
   return (
     <Fragment>
       <div className={classes.titles}>
         <div className={classes.catergory_title_quarter}>
-          <button className={classes.button}>
+          <button className={classes.button} onClick={onDeleteItemClick}>
             <Image
               className={classes.circle}
               src={"/cross.svg"}
               width={20}
               height={20}
               alt={"delete item button"}
-              onClick={handleDeleteItem}
             />
           </button>
         </div>
@@ -69,20 +56,20 @@ const CheckoutPage_items = ({ cartItems, onUpdateItem }) => {
         </h6>
         <h6 className={classes.catergory_title}>{cartItems.price}</h6>
         <div className={classes.catergory_title}>
-          <form action="">
-            <input
-              type="number"
-              value={inputValue}
-              onChange={handleInputChange}
-              className={classes.input}
-            />
-          </form>
+          <input
+            type="number"
+            ref={formRef}
+            id={cartItems.name}
+            value={amountInputValue}
+            onChange={handleInputChange}
+            className={classes.input}
+          />
         </div>
         <h6 className={classes.catergory_title}>
           {Intl.NumberFormat("en-nz", {
             style: "currency",
             currency: "nzd",
-          }).format(inputValue * number)}
+          }).format(amountInputValue * number)}
         </h6>
       </div>
     </Fragment>
