@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Fragment } from "react";
 import classes from "./CheckoutModal.module.css";
 
 import Image from "next/image";
@@ -9,13 +9,13 @@ import ShoppingCart_items from "./ShoppingCart_items/ShoppingCart_items";
 import { useRouter } from "next/navigation";
 
 import { useSelector } from "react-redux";
+import { selectTotalPrice } from "@/redux/features/selectTotals";
+import { selectTotalQuantity } from "@/redux/features/selectTotals";
 
 const CheckoutModal = ({ handleCheckoutModalfalse }) => {
+  const grandTotal = useSelector(selectTotalPrice);
+  const numberInCart = useSelector(selectTotalQuantity);
   const router = useRouter();
-  const FAKE_PRICE = Intl.NumberFormat("en-nz", {
-    style: "currency",
-    currency: "nzd",
-  }).format(299.89);
 
   const cartItems = useSelector((state) => state.cart.items);
 
@@ -36,23 +36,40 @@ const CheckoutModal = ({ handleCheckoutModalfalse }) => {
         </button>
       </div>
       <div className={classes.indent}>
-        <div className={classes.ShoppingCart_items_area}>
-          {cartItems.map((item) => (
-            <ShoppingCart_items cartItem={item} />
-          ))}
-        </div>
-        <div className={classes.price}>
-          <h3 className={classes.price_title}>Subtotal:</h3>
-          <h3 className={classes.price_amount}>{FAKE_PRICE}</h3>
-        </div>
-        <div className={classes.buttons}>
-          <Button
-            width={"100%"}
-            value="View Cart"
-            onClick={handleViewCheckout}
-          />
-          <Button width={"100%"} value="Checkout" />
-        </div>
+        {numberInCart !== 0 ? (
+          <Fragment>
+            <div className={classes.ShoppingCart_items_area}>
+              {cartItems.map((item) => (
+                <ShoppingCart_items cartItem={item} key={cartItems.id} />
+              ))}
+            </div>
+            <div className={classes.price}>
+              <h3 className={classes.price_title}>Subtotal:</h3>
+              <h3 className={classes.price_amount}>{grandTotal}</h3>
+            </div>
+            <div className={classes.buttons}>
+              <Button
+                width={"100%"}
+                value="View Cart"
+                onClick={handleViewCheckout}
+              />
+              <Button width={"100%"} value="Checkout" />
+            </div>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <div className={classes.cartItemsEmpty}>
+              <p>No products in the cart.</p>
+            </div>
+            <div className={`${classes.buttons} ${classes.bottomButton}`}>
+              <Button
+                width={"100%"}
+                value="Continue Shopping"
+                onClick={handleCheckoutModalfalse}
+              />
+            </div>
+          </Fragment>
+        )}
       </div>
     </main>
   );

@@ -69,7 +69,7 @@ const PlantDescription = ({ data }) => {
             priority
             layout="fill"
             sizes="(max-width: 768px) 100vw"
-            object-Fit="cover"
+            object-fit="cover"
             alt={`Image of ${data.title} plant (enlarged)`}
             className={classes.largeImage}
           />

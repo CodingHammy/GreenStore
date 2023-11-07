@@ -9,7 +9,7 @@ const PlantButtonList = ({ firstItemOnPage, lastItemOnPage, filteredData }) => {
     <div>
       <div className={classes.container}>
         {filteredData.slice(firstItemOnPage, lastItemOnPage).map((item) => (
-          <Plant plant={item} />
+          <Plant plant={item} key={item.id} />
         ))}
       </div>
     </div>

@@ -19,6 +19,7 @@ const ContactInfo = () => {
             height={"20"}
             width={"20"}
             className={`${classes.datumPoint} ${classes.contactIcons}`}
+            alt="a marker icon"
           />
           <div className={classes.optionsForContactText}>
             <h3 className={classes.contact_headings}>VISIT US</h3>
@@ -33,6 +34,7 @@ const ContactInfo = () => {
             height={"20"}
             width={"20"}
             className={`${classes.svgFlip} ${classes.contactIcons} ${classes.phoneIcon}`}
+            alt="phone icon"
           />
           <div className={classes.optionsForContactText}>
             <h3 className={classes.contact_headings}>CALL US</h3>
@@ -45,6 +47,7 @@ const ContactInfo = () => {
             height={"20"}
             width={"20"}
             className={`${classes.mailIcon} ${classes.contactIcons}`}
+            alt="postal letter icon"
           />
           <div className={classes.optionsForContactText}>
             <h3 className={classes.contact_headings}>EMAIL US</h3>
@@ -55,16 +58,31 @@ const ContactInfo = () => {
       <h3 className={classes.icon_header}>FOLLOW US</h3>
       <div className={classes.icon_links}>
         <Link href={"https://www.instagram.com/"}>
-          <Image src="/instaBlack.svg" width={30} height={30} />
+          <Image
+            src="/instaBlack.svg"
+            width={30}
+            height={30}
+            alt="Instagram icon"
+          />
         </Link>
         <Link href={"https://www.pinterest.co.uk/"}>
-          <Image src="/pinterest.svg" width={23} height={23} />
+          <Image
+            src="/pinterest.svg"
+            width={23}
+            height={23}
+            alt="Pinterest icon"
+          />
         </Link>
         <Link href={"https://en-gb.facebook.com/"}>
-          <Image src="/facebookBlack.svg" width={26} height={26} />
+          <Image
+            src="/facebookBlack.svg"
+            width={26}
+            height={26}
+            alt="Facebook icon"
+          />
         </Link>
         <Link href={"https://www.youtube.com/"}>
-          <Image src="/youtube.svg" width={28} height={28} />
+          <Image src="/youtube.svg" width={28} height={28} alt="Youtube icon" />
         </Link>
       </div>
     </main>

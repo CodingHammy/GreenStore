@@ -25,7 +25,7 @@ export default function Home() {
           priority
           src={heroImage}
           layout="fill"
-          object-Fit="cover"
+          object-fit="cover"
           quality={100}
           className={classes.heroImage}
           alt="hero image of Plant"

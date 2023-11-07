@@ -35,15 +35,6 @@ const cartSlice = createSlice({
       const { name } = action.payload;
       state.items = state.items.filter((item) => item.name !== name);
     },
-    updateCart: (state, action) => {
-      const { name, amount } = action.payload;
-      console.log(name, amount);
-      const existingItem = state.items.find((item) => item.name === name);
-
-      if (existingItem) {
-        existingItem.amount = parseInt(amount);
-      }
-    },
   },
 });
 

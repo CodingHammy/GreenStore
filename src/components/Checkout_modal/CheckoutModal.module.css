@@ -12,7 +12,6 @@
 }
 
 .indent {
-
   position: relative;
   height: 100%;
 }
@@ -26,7 +25,7 @@
 }
 
 .title {
-  margin-left: 20px;
+  margin: 10px 0 10px 20px;
   display: flex;
   align-items: center;
 }
@@ -42,7 +41,7 @@
 
 .ShoppingCart_items_area {
   padding: 30px 10px 0 10px;
-  height: 70%;
+  height: 78%;
   overflow-y: scroll;
 
 }
@@ -68,4 +67,19 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.bottomButton {
+  margin-top: 60px;
+}
+
+.cartItemsEmpty {
+  width: 100%;
+  height: 85.3%;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+  color: rgba(var(--color-r6)/1);
 }

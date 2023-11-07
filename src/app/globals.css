@@ -15,8 +15,6 @@ body {
 
 button {
   cursor: pointer;
-  width: 120px;
-  height: 50px;
   border: var(--color-5);
   background-color: var(--color-5);
   color: black;

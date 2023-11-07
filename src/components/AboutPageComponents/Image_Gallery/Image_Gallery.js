@@ -12,7 +12,8 @@ const Image_Gallery = ({ galleryImages }) => {
             src={item.src}
             className={classes.image}
             fill
-            object-Fit="cover"
+            sizes="20vw"
+            object-fit="cover"
             alt={item.altTag}
           />
         </div>

@@ -80,11 +80,11 @@ const AllPlantsDisplay = ({ PLANT_DATA, params }) => {
                   : `Showing all ${filteredData.length} results`}
               </p>
 
-              <select name="filter" id="filter" className={classes.filter}>
+              {/* <select name="filter" id="filter" className={classes.filter}>
                 <option value="by age" className={classes.options}>
                   by age
                 </option>
-              </select>
+              </select> */}
               {/* still need to work on filter */}
             </div>
           </div>

@@ -35,11 +35,11 @@ const RelatedProductsTab = ({ PLANT_DATA, params }) => {
       <div className={classes.plantItems}>
         {PLANT_DATA.slice(params.id, nextThreePlantsToDisplay[0]).map(
           (item) => (
-            <Plant plant={item} />
+            <Plant plant={item} key={item.id} />
           )
         )}
         {PLANT_DATA.slice(0, nextThreePlantsToDisplay[1]).map((item) => (
-          <Plant plant={item} />
+          <Plant plant={item} key={item.id} />
         ))}
       </div>
     </section>

@@ -4,28 +4,32 @@ import Image from "next/image";
 
 import classes from "./CheckoutPage_items.module.css";
 
-const CheckoutPage_items = ({
-  cartItems,
-  formRef,
-  handleDeleteItem,
-  amountInputValue,
-  setAmountInputValue,
-}) => {
+import { useDispatch } from "react-redux";
+import { addItem, removeItem } from "@/redux/features/cartSlice";
+
+const CheckoutPage_items = ({ cartItems, handleDeleteItem }) => {
+  const dispatch = useDispatch();
   const number = Number(cartItems.price.replace(/[^0-9.-]+/g, ""));
-  // const [amountInputValue, setAmountInputValue] = useState(0); // Initial value will be replaced with the amount of plants that had been added to cart
-
-  // useEffect(() => {
-  //   setAmountInputValue(cartItems.amount);
-  // }, []);
-
-  const handleInputChange = (event) => {
-    event.preventDefault();
-    setAmountInputValue(event.target.value);
-  };
-  //used to update the value and save info
 
   const onDeleteItemClick = () => {
     handleDeleteItem(cartItems.name); // Pass both name and formRef to the parent
+  };
+
+  const handleAddItem = () => {
+    dispatch(
+      addItem({
+        name: cartItems.name,
+        amount: 1,
+      })
+    );
+  };
+  const handleRemoveItem = () => {
+    dispatch(
+      removeItem({
+        name: cartItems.name,
+        amount: 1,
+      })
+    );
   };
 
   return (
@@ -38,7 +42,7 @@ const CheckoutPage_items = ({
               src={"/cross.svg"}
               width={20}
               height={20}
-              alt={"delete item button"}
+              alt={"delete all of an item button"}
             />
           </button>
         </div>
@@ -55,21 +59,32 @@ const CheckoutPage_items = ({
           {cartItems.name}
         </h6>
         <h6 className={classes.catergory_title}>{cartItems.price}</h6>
-        <div className={classes.catergory_title}>
-          <input
-            type="number"
-            ref={formRef}
-            id={cartItems.name}
-            value={amountInputValue}
-            onChange={handleInputChange}
-            className={classes.input}
-          />
+        <div className={`${classes.catergory_title} ${classes.amountSection}`}>
+          <button className={classes.button} onClick={handleRemoveItem}>
+            <Image
+              className={classes.circle}
+              src={"/minus.svg"}
+              width={18}
+              height={18}
+              alt={"add item button"}
+            />
+          </button>
+          {cartItems.amount}
+          <button className={classes.button} onClick={handleAddItem}>
+            <Image
+              className={classes.circle}
+              src={"/plus.svg"}
+              width={18}
+              height={18}
+              alt={"remove item button"}
+            />
+          </button>
         </div>
         <h6 className={classes.catergory_title}>
           {Intl.NumberFormat("en-nz", {
             style: "currency",
             currency: "nzd",
-          }).format(amountInputValue * number)}
+          }).format(cartItems.amount * number)}
         </h6>
       </div>
     </Fragment>

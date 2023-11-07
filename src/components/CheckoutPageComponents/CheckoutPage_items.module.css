@@ -3,6 +3,10 @@
   border-radius: 50%;
 }
 
+.amountSection {
+  gap: 14px;
+}
+
 .titles {
   display: flex;
   flex-direction: row;
