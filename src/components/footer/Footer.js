@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/legacy/image";
-import Button from "../button/Button";
+import Button from "../component_utils/button/Button";
 
 import classes from "./footer.module.css";
 

@@ -52,7 +52,7 @@ const CheckoutPage_items = ({ cartItems, handleDeleteItem }) => {
             style={{ objectFit: "contain" }}
             height={100}
             width={100}
-            alt={`image of ${cartItems.title}`}
+            alt={`image of ${cartItems.name}`}
           />
         </div>
         <h6 className={classes.catergory_title_productName}>

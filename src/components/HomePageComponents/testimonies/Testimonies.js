@@ -1,5 +1,5 @@
 import React from "react";
-import Testimony from "@/components/testimonies/testimony/Testimony";
+import Testimony from "@/components/HomePageComponents/testimonies/testimony/Testimony";
 import classes from "./Testimonies.module.css";
 
 const DUMMY_DATA = [

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "../button/Button";
+import Button from "../../component_utils/button/Button";
 import classes from "./CartTotal.module.css";
 
 import { useSelector } from "react-redux";

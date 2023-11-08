@@ -9,7 +9,7 @@ import { addItem } from "@/redux/features/cartSlice";
 
 import { useDispatch } from "react-redux";
 
-import Button from "@/components/button/Button";
+import Button from "@/components/component_utils/button/Button";
 
 const PlantDescription = ({ data }) => {
   const dispatch = useDispatch();

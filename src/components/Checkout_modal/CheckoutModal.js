@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import classes from "./CheckoutModal.module.css";
 
 import Image from "next/image";
-import Button from "../button/Button";
+import Button from "../component_utils/button/Button";
 import ShoppingCart_items from "./ShoppingCart_items/ShoppingCart_items";
 
 import { useRouter } from "next/navigation";
@@ -32,7 +32,12 @@ const CheckoutModal = ({ handleCheckoutModalfalse }) => {
           className={classes.exitButton}
           onClick={handleCheckoutModalfalse}
         >
-          <Image src="/cross.svg" width={25} height={25} />
+          <Image
+            src="/cross.svg"
+            width={25}
+            height={25}
+            alt="delete all of item button"
+          />
         </button>
       </div>
       <div className={classes.indent}>
@@ -40,7 +45,7 @@ const CheckoutModal = ({ handleCheckoutModalfalse }) => {
           <Fragment>
             <div className={classes.ShoppingCart_items_area}>
               {cartItems.map((item) => (
-                <ShoppingCart_items cartItem={item} key={cartItems.id} />
+                <ShoppingCart_items cartItem={item} key={item.id} />
               ))}
             </div>
             <div className={classes.price}>

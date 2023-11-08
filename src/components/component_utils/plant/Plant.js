@@ -5,7 +5,7 @@ import Image from "next/legacy/image";
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addItem } from "./../../redux/features/cartSlice";
+import { addItem } from "../../../redux/features/cartSlice";
 
 import classes from "./Plant.module.css";
 
@@ -36,6 +36,7 @@ const Plant = ({ plant }) => {
         amount: 1,
         image: plant.src[0],
         price: plant.price,
+        id: plant.id,
       })
     );
   };

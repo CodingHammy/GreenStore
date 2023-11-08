@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-import Plant from "@/components/plant/Plant";
+import Plant from "@/components/component_utils/plant/Plant";
 
 import classes from "./RelatedProductsTab.module.css";
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Plant from "@/components/plant/Plant";
+import Plant from "@/components/component_utils/plant/Plant";
 
 import classes from "./PlantButtonList.module.css";
 

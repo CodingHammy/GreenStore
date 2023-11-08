@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "@/components/button/Button";
+import Button from "@/components/component_utils/button/Button";
 
 import classes from "./ReviewTab.module.css";
 
