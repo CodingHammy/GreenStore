@@ -12,7 +12,8 @@ const OurStory = ({ onClick }) => {
       <div className={classes.imageContainer}>
         <Image
           src="https://images.unsplash.com/photo-1550254469-e77c18c9252b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
-          layout="fill"
+          fill
+          sizes="50%"
           priority
           className={classes.imageLeftStory}
           alt="image of cheese plant"

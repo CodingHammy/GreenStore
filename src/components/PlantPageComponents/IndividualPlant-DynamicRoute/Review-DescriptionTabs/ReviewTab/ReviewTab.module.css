@@ -10,15 +10,15 @@
 }
 
 .yourRating {
+  display: flex;
+
   position: relative;
 }
 
-.rating {
-  position: absolute;
-  top: -7px;
-  padding-left: 14px;
-  font-size: 28px;
+.space {
+  margin-right: 10px;
 }
+
 
 .noReviews {
   padding-bottom: 20px;
@@ -61,6 +61,12 @@
 
 .label {
   font-weight: 300;
+}
+
+.input,
+.inputTextArea {
+  padding: 10px;
+  font-size: 16px;
 }
 
 .input {

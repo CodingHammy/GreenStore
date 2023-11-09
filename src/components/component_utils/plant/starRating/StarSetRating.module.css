@@ -1,0 +1,11 @@
+.rating {
+  display: flex;
+}
+
+.radioButton {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+}

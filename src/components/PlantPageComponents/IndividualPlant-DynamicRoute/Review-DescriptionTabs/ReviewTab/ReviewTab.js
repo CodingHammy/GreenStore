@@ -1,25 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Button from "@/components/component_utils/button/Button";
 
 import classes from "./ReviewTab.module.css";
 
+import StarSetRating from "@/components/component_utils/plant/starRating/StarSetRating";
+
 const ReviewTab = () => {
+  const [curentRating, setCurrentRating] = useState(null);
+  const [reviewData, setReviewData] = useState(null);
+
+  const handleRatingChange = (starRating) => {
+    setCurrentRating(starRating);
+  };
+
+  const HandleFormSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    setReviewData({
+      name: formData.get("name"),
+      email: formData.get("email"),
+      review: formData.get("review"),
+      rating: curentRating,
+    });
+  };
+  console.log(reviewData);
+
   return (
     <section className={classes.reviewsContainer}>
       <p className={classes.noReviews}>There are no Reviews yet.</p>
+
       <div className={classes.formBorder}>
-        <form action="" className={classes.gap}>
+        <form action="" className={classes.gap} onSubmit={HandleFormSubmit}>
           <h2>Be the first to review “Alocasia Regal Shield”</h2>
           <p className={classes.lessBold}>
             Your email address will not be published. Required fields are marked
             *
           </p>
-          <div>
-            <p className={classes.yourRating}>
-              Your rating * <span className={classes.rating}>★★★✰✰</span>
-            </p>
+          <div className={classes.yourRating}>
+            <span className={classes.space}>Your rating * </span>
+            <StarSetRating onRatingChange={handleRatingChange} />
           </div>
+
           <div
             className={`${classes.detailsInput} ${classes.detailsInputWide}`}
           >
@@ -32,6 +54,7 @@ const ReviewTab = () => {
               className={classes.inputTextArea}
             ></textarea>
           </div>
+
           <div className={classes.detailsContainer}>
             <div className={classes.detailsInput}>
               <label htmlFor="nameInput" id="name" className={classes.label}>
@@ -44,21 +67,21 @@ const ReviewTab = () => {
                 className={classes.input}
               />
             </div>
+
             <div className={classes.detailsInput}>
               <label htmlFor="emailInput" className={classes.label}>
                 Email *
               </label>
-              <input type="email" id="emailInput" className={classes.input} />
+              <input
+                type="email"
+                id="emailInput"
+                name="email"
+                className={classes.input}
+              />
             </div>
           </div>
-          <div className={classes.row}>
-            <input type="checkbox" />
-            <p className={classes.label}>
-              Save my name, email, and website in this browser for the next time
-              I comment.
-            </p>
-          </div>
-          <Button value="Submit" />
+
+          <Button value="Submit" type="submit" />
         </form>
       </div>
     </section>

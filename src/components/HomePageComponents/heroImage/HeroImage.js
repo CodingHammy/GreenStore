@@ -10,7 +10,8 @@ const HeroImage = ({ onClick }) => {
       <Image
         priority
         src={heroImage}
-        layout="fill"
+        fill
+        sizes="100vw"
         object-fit="cover"
         quality={100}
         className={classes.heroImage}

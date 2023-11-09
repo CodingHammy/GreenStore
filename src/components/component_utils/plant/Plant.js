@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../../../redux/features/cartSlice";
 
 import classes from "./Plant.module.css";
+import StarRatingView from "./starRating/StarRatingView";
 
 const Plant = ({ plant }) => {
   const dispatch = useDispatch();
@@ -57,7 +58,7 @@ const Plant = ({ plant }) => {
           alt={`image of ${plant.title}`}
         />
       </Link>
-      <p className={classes.rating}>★★★✰✰{plant.rating}</p>
+      <StarRatingView />
       <Link href={plant.src} className={classes.title}>
         {plant.title}
       </Link>
