@@ -4,8 +4,8 @@ import Image from "next/image";
 
 import classes from "./StarRatingView.module.css";
 
-const StarRatingView = () => {
-  const outOfFiveStarRating = 2;
+const StarRatingView = ({ rating }) => {
+  const outOfFiveStarRating = rating || 0;
   const starsLeftOutOfFive = 5 - outOfFiveStarRating;
 
   const fullStars = Array.from({ length: outOfFiveStarRating }, (_, index) => (

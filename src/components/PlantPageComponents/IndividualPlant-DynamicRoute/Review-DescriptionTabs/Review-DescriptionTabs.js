@@ -10,7 +10,7 @@ const ACTIVE = {
   ReviewTab: "reviewTab",
 };
 
-const ReviewAndDescriptionTabs = () => {
+const ReviewAndDescriptionTabs = ({ data }) => {
   const FAKE_DATA = 2;
   const [activeTab, setActiveTab] = useState(ACTIVE.DescriptionTab);
 
@@ -40,7 +40,7 @@ const ReviewAndDescriptionTabs = () => {
         </button>
       </div>
       {activeTab === ACTIVE.DescriptionTab && <DescriptionTab />}
-      {activeTab === ACTIVE.ReviewTab && <ReviewTab />}
+      {activeTab === ACTIVE.ReviewTab && <ReviewTab data={data} />}
     </section>
   );
 };

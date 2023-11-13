@@ -15,7 +15,7 @@ const PlantPage = ({ params }) => {
     <div className={classes.wrapper}>
       <div className={classes.container}>
         <PlantDescription data={data} />
-        <ReviewAndDescriptionTabs />
+        <ReviewAndDescriptionTabs data={params.id} />
         <RelatedProductsTab PLANT_DATA={PLANT_DATA} params={params} />
       </div>
     </div>

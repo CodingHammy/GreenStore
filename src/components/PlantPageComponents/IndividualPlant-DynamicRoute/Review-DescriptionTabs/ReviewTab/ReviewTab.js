@@ -2,11 +2,14 @@ import React, { useState } from "react";
 
 import Button from "@/components/component_utils/button/Button";
 
+import Image from "next/image";
+
 import classes from "./ReviewTab.module.css";
 
 import StarSetRating from "@/components/component_utils/plant/starRating/StarSetRating";
+import StarRatingView from "@/components/component_utils/plant/starRating/StarRatingView";
 
-const ReviewTab = () => {
+const ReviewTab = ({ data }) => {
   const [curentRating, setCurrentRating] = useState(null);
   const [reviewData, setReviewData] = useState(null);
 
@@ -18,6 +21,7 @@ const ReviewTab = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     setReviewData({
+      plantId: data,
       name: formData.get("name"),
       email: formData.get("email"),
       review: formData.get("review"),
@@ -29,6 +33,21 @@ const ReviewTab = () => {
   return (
     <section className={classes.reviewsContainer}>
       <p className={classes.noReviews}>There are no Reviews yet.</p>
+
+      <div className={classes.individualPlantRating}>
+        <Image
+          src={"/anonymous.svg"}
+          width={65}
+          height={65}
+          alt="no Profile photo icon"
+          className={classes.profileImage}
+        />
+        <div>
+          <h2 className={classes.heading}>WIll</h2>
+          <StarRatingView rating={2} />
+          <p>I love It</p>
+        </div>
+      </div>
 
       <div className={classes.formBorder}>
         <form action="" className={classes.gap} onSubmit={HandleFormSubmit}>
