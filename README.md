@@ -26,6 +26,7 @@ To enhance user experience and security, the website includes authentication fun
 - Next.js
 - Redux
 - Firebase
+- Mapbox
 
 ## Getting Started
 
