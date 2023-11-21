@@ -3,11 +3,17 @@ import React from "react";
 import Button from "../../component_utils/button/Button";
 import classes from "./CartTotal.module.css";
 
+import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { selectTotalPrice } from "@/redux/features/selectTotals";
 
 const CartTotal = () => {
+  const router = useRouter();
   const grandTotal = useSelector(selectTotalPrice);
+
+  const handleRedirectToCheckout = () => {
+    router.push("/checkout");
+  };
 
   return (
     <section className={classes.totalPrice}>
@@ -19,7 +25,12 @@ const CartTotal = () => {
           <div className={classes.totalPrice_amount}>
             Total Price <span>{grandTotal}</span>
           </div>
-          <Button value="Buy Now" width="100%" height="60px" />
+          <Button
+            value="Buy Now"
+            width="100%"
+            height="60px"
+            onClick={handleRedirectToCheckout}
+          />
         </div>
       </div>
     </section>

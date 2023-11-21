@@ -19,7 +19,12 @@ const CheckoutModal = ({ handleCheckoutModalfalse }) => {
 
   const cartItems = useSelector((state) => state.cart.items);
 
-  const handleViewCheckout = () => {
+  const handleViewCart = () => {
+    handleCheckoutModalfalse();
+    router.push("/viewCart");
+  };
+
+  const handleRedirectToCheckout = () => {
     handleCheckoutModalfalse();
     router.push("/checkout");
   };
@@ -56,9 +61,13 @@ const CheckoutModal = ({ handleCheckoutModalfalse }) => {
               <Button
                 width={"100%"}
                 value="View Cart"
-                onClick={handleViewCheckout}
+                onClick={handleViewCart}
               />
-              <Button width={"100%"} value="Checkout" />
+              <Button
+                width={"100%"}
+                value="Checkout"
+                onClick={handleRedirectToCheckout}
+              />
             </div>
           </Fragment>
         ) : (

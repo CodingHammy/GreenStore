@@ -1,0 +1,50 @@
+.container {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 55%;
+
+}
+
+.heading {
+  margin: 20px 0 10px 0;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.border {
+  border: solid 1px rgba(var(--color-r2)/.2);
+  border-radius: 3px;
+}
+
+.total,
+.subtotal,
+.titles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtotal,
+.titles {
+  padding: 20px;
+}
+
+
+
+.titles {
+  border-bottom: solid 1px rgba(var(--color-r2)/.2);
+  color: rgba(var(--color-r2)/.8);
+  font-weight: 600;
+}
+
+.subtotal {
+  border-top: solid 1px rgba(var(--color-r2)/.2);
+}
+
+.total {
+  border-top: solid 1px rgba(var(--color-r2)/.2);
+  padding: 30px;
+  font-weight: 700;
+  font-size: 18px;
+}

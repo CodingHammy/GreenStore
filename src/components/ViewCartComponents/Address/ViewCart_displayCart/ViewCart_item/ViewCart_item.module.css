@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+
+  padding: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.content_containers {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60%;
+}
+
+.itemName {
+  margin-left: 10px;
+}
+
+.amount {
+  width: 10%;
+}
+
+.subTotal {
+  width: 30%;
+  display: flex;
+  justify-content: end;
+}
