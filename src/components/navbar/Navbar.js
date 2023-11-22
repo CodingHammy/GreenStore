@@ -38,7 +38,7 @@ const NavBar = ({ handleCheckoutModalTrue }) => {
             <p className={classes.amount}>{grandQuantity}</p>
           </div>
         </button>
-        <Link href="#">
+        <Link href="/login">
           <Image
             src="/profile.svg"
             width={24}
