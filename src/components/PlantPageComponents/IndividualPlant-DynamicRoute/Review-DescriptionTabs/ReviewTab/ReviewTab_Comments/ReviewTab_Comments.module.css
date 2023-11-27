@@ -1,0 +1,29 @@
+.individualPlantRating {
+  display: flex;
+  align-items: flex-start;
+  border: solid 1px rgba(var(--color-r3)/.1);
+  border-radius: 10px;
+  margin: 5px 0 5px;
+  padding: 10px 0 10px;
+
+}
+
+.profileImage {
+  margin: 5px 5px 5px 30px;
+}
+
+.heading {
+  font-family: 'Faustina';
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-3);
+
+}
+
+.ratingComment {
+  font-size: 16px;
+  /* padding-bottom: 20px; */
+  max-height: 100px;
+  overflow-y: auto;
+  /* margin: 5px 0 20px; */
+}

@@ -79,19 +79,6 @@
   height: 100%;
 }
 
-.individualPlantRating {
-  display: flex;
-  align-items: flex-start;
-}
-
-.profileImage {
-  margin: 5px 5px 5px 0;
-}
-
-.heading {
-  font-family: 'Faustina';
-  font-weight: 600;
-  font-size: 24px;
-  color: var(--color-3);
-
+.reviews {
+  padding-bottom: 20px;
 }

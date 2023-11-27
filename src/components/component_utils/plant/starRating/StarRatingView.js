@@ -12,8 +12,8 @@ const StarRatingView = ({ rating }) => {
     <div key={index}>
       <Image
         src={"/fullStar.svg"}
-        width={18}
-        height={18}
+        width={16}
+        height={16}
         alt="full star icon"
       />
     </div>
@@ -22,8 +22,8 @@ const StarRatingView = ({ rating }) => {
     <div key={index}>
       <Image
         src={"/EmptyStar.svg"}
-        width={18}
-        height={18}
+        width={16}
+        height={16}
         alt="empty star icon"
       />
     </div>
