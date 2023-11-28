@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Image from "next/image";
 
 import classes from "./StarRatingView.module.css";
 
 const StarRatingView = ({ rating }) => {
-  const outOfFiveStarRating = rating || 0;
+  const outOfFiveStarRating = rating;
   const starsLeftOutOfFive = 5 - outOfFiveStarRating;
 
   const fullStars = Array.from({ length: outOfFiveStarRating }, (_, index) => (

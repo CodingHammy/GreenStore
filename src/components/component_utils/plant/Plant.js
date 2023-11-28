@@ -9,12 +9,23 @@ import { addItem } from "../../../redux/features/cartSlice";
 
 import classes from "./Plant.module.css";
 import StarRatingView from "./starRating/StarRatingView";
+import { useSelector } from "react-redux";
 
 const Plant = ({ plant }) => {
   const dispatch = useDispatch();
-
   const [checkoutIsShown, setCheckoutIsShown] = useState(false);
   const [adviceIsShown, setAdviceIsShown] = useState(false);
+
+  // const starRating = useSelector(
+  //   (state) => state.review.plantsReviews[plant.id].totalRating
+  // );
+
+  const starRating = useSelector((state) => {
+    const reviews = state.review.plantsReviews["1"];
+    return reviews ? parseInt(reviews.totalRating) : 0;
+  });
+
+  // const rating = starRating || 0;
 
   const displayEnterHandler = () => {
     setCheckoutIsShown(true);
@@ -58,7 +69,7 @@ const Plant = ({ plant }) => {
           alt={`image of ${plant.title}`}
         />
       </Link>
-      <StarRatingView />
+      <StarRatingView rating={starRating} />
       <Link href={plant.src} className={classes.title}>
         {plant.title}
       </Link>

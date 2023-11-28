@@ -19,6 +19,7 @@ const ReviewTab = () => {
   const plantsReviews = useSelector(
     (state) => state.review.plantsReviews[plantId]
   );
+
   const dispatch = useDispatch();
   const [curentRating, setCurrentRating] = useState(null);
 
@@ -40,22 +41,23 @@ const ReviewTab = () => {
       })
     );
   };
+  console.log(plantsReviews);
 
   return (
     <section className={classes.reviewsContainer}>
       {!plantsReviews && (
         <p className={classes.noReviews}>There are no Reviews yet.</p>
       )}
-      <section className={classes.reviews}>
+      {/* <section className={classes.reviews}>
         {plantsReviews &&
           plantsReviews.map((item) => (
             <ReviewTab_Comments
-              name={item.name}
-              comment={item.comment}
-              rating={item.rating}
+              name={item[1].name}
+              comment={item[1].comment}
+              rating={item[1].rating}
             />
           ))}
-      </section>
+      </section> */}
 
       <div className={classes.formBorder}>
         <form action="" className={classes.gap} onSubmit={HandleFormSubmit}>
