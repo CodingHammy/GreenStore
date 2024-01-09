@@ -10,8 +10,7 @@ const ACTIVE = {
   ReviewTab: "reviewTab",
 };
 
-const ReviewAndDescriptionTabs = ({ data }) => {
-  const FAKE_DATA = 2;
+const ReviewAndDescriptionTabs = ({ data, totalReviews }) => {
   const [activeTab, setActiveTab] = useState(ACTIVE.DescriptionTab);
 
   const handleSetActiveTab = (tabActivated) => {
@@ -36,7 +35,7 @@ const ReviewAndDescriptionTabs = ({ data }) => {
           onClick={() => handleSetActiveTab(ACTIVE.ReviewTab)}
         >
           Reviews{" "}
-          <span className={classes.extraLetterSpacing}>({FAKE_DATA})</span>
+          <span className={classes.extraLetterSpacing}>({totalReviews})</span>
         </button>
       </div>
       {activeTab === ACTIVE.DescriptionTab && <DescriptionTab />}

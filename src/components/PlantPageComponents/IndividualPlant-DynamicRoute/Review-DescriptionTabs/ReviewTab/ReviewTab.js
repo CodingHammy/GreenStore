@@ -22,42 +22,62 @@ const ReviewTab = () => {
 
   const dispatch = useDispatch();
   const [curentRating, setCurrentRating] = useState(null);
+  const [reviewFields, setReviewFields] = useState({
+    review: "",
+    name: "",
+    email: "",
+  });
+
+  const handleFieldChange = (e) => {
+    const { name, value } = e.target;
+    setReviewFields((prevFields) => ({
+      ...prevFields,
+      [name]: value,
+    }));
+  };
 
   const handleRatingChange = (starRating) => {
-    setCurrentRating(starRating);
+    setCurrentRating(parseInt(starRating));
   };
 
   const HandleFormSubmit = (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
-    dispatch(
-      addComment({
+    const { review, name, email } = reviewFields;
+
+    if (review.trim() !== "" && name.trim() !== "" && email.trim() !== "") {
+      const commentData = {
         plantId: plantId,
-        rating: curentRating,
-        comment: formData.get("review"),
-        name: formData.get("name"),
-        email: formData.get("email"),
-      })
-    );
+        comment: review,
+        name: name,
+        email: email,
+        rating: curentRating !== null ? curentRating : undefined,
+      };
+      dispatch(addComment(commentData));
+      setReviewFields({
+        review: "",
+        name: "",
+        email: "",
+      });
+      setCurrentRating(null);
+    }
   };
-  console.log(plantsReviews);
 
   return (
     <section className={classes.reviewsContainer}>
       {!plantsReviews && (
         <p className={classes.noReviews}>There are no Reviews yet.</p>
       )}
-      {/* <section className={classes.reviews}>
+      <section className={classes.reviews}>
         {plantsReviews &&
           plantsReviews.map((item) => (
             <ReviewTab_Comments
-              name={item[1].name}
-              comment={item[1].comment}
-              rating={item[1].rating}
+              name={item.name}
+              comment={item.comment}
+              rating={item.rating}
             />
           ))}
-      </section> */}
+      </section>
 
       <div className={classes.formBorder}>
         <form action="" className={classes.gap} onSubmit={HandleFormSubmit}>
@@ -83,7 +103,9 @@ const ReviewTab = () => {
               cols="30"
               rows="10"
               className={classes.inputTextArea}
+              value={reviewFields.review}
               required
+              onChange={handleFieldChange}
             ></textarea>
           </div>
 
@@ -97,6 +119,8 @@ const ReviewTab = () => {
                 id="nameInput"
                 name="name"
                 className={classes.input}
+                value={reviewFields.name}
+                onChange={handleFieldChange}
                 required
               />
             </div>
@@ -110,6 +134,8 @@ const ReviewTab = () => {
                 id="emailInput"
                 name="email"
                 className={classes.input}
+                value={reviewFields.email}
+                onChange={handleFieldChange}
                 required
               />
             </div>

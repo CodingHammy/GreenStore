@@ -11,7 +11,7 @@ const StarSetRating = ({ onRatingChange }) => {
   const handleClick = (e) => {
     const newRating = e.target.value;
 
-    setRating(parseInt(newRating));
+    setRating(newRating);
     onRatingChange(newRating);
   };
 
