@@ -14,9 +14,6 @@ The primary purpose of the website is to exhibit the skills and knowledge I've g
 
 The website incorporates a fully functional shopping cart feature. This cart is seamlessly connected to a database, ensuring that users can easily add, update, and remove items from their cart. The database integration ensures a persistent and reliable shopping experience.
 
-### 3. Authentication
-
-To enhance user experience and security, the website includes authentication functionality. Users will have the ability to create accounts, log in, and enjoy personalized features. This also contributes to a secure environment for any transactional activities, such as making purchases through the shopping cart.
 
 ## Technologies Used
 
@@ -25,7 +22,6 @@ To enhance user experience and security, the website includes authentication fun
 - CSS
 - Next.js
 - Redux
-- Firebase
 - Mapbox
 
 ## Getting Started
