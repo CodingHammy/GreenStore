@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  margin: auto;
+  height: 50vh;
+  width: 90vw;
+}
+
+.header {
+  font-size: 40px;
+}
+
+.paragraph {
+  font-size: 20px;
+}
+
+.link {
+  text-decoration: underline;
+}
