@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Image from "next/image";
 
 import classes from "./StarRatingView.module.css";
 
 const StarRatingView = ({ rating }) => {
-  const outOfFiveStarRating = rating || 0;
+  const outOfFiveStarRating = rating;
   const starsLeftOutOfFive = 5 - outOfFiveStarRating;
 
   const fullStars = Array.from({ length: outOfFiveStarRating }, (_, index) => (
     <div key={index}>
       <Image
         src={"/fullStar.svg"}
-        width={18}
-        height={18}
+        width={16}
+        height={16}
         alt="full star icon"
       />
     </div>
@@ -22,8 +22,8 @@ const StarRatingView = ({ rating }) => {
     <div key={index}>
       <Image
         src={"/EmptyStar.svg"}
-        width={18}
-        height={18}
+        width={16}
+        height={16}
         alt="empty star icon"
       />
     </div>

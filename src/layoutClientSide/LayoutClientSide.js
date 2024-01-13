@@ -48,7 +48,7 @@ const LayoutClientSide = ({ children }) => {
   }, [showCheckoutModal]);
 
   return (
-    <Fragment>
+    <body>
       <div className={`${showCheckoutModal ? classes.overlay : ""}`}>
         <NavBar handleCheckoutModalTrue={handleCheckoutModalTrue} />
         {children}
@@ -59,7 +59,7 @@ const LayoutClientSide = ({ children }) => {
           <CheckoutModal handleCheckoutModalfalse={handleCheckoutModalfalse} />
         </div>
       )}
-    </Fragment>
+    </body>
   );
 };
 

@@ -10,6 +10,7 @@ const StarSetRating = ({ onRatingChange }) => {
 
   const handleClick = (e) => {
     const newRating = e.target.value;
+
     setRating(newRating);
     onRatingChange(newRating);
   };

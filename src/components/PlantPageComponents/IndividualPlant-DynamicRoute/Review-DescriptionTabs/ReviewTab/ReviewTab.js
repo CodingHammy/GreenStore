@@ -2,56 +2,88 @@ import React, { useState } from "react";
 
 import Button from "@/components/component_utils/button/Button";
 
-import Image from "next/image";
-
 import classes from "./ReviewTab.module.css";
+import ReviewTab_Comments from "./ReviewTab_Comments/ReviewTab_Comments";
+import { usePathname } from "next/navigation";
+
+import { useSelector } from "react-redux";
+import { addComment } from "@/redux/features/reviewSlice";
+import { useDispatch } from "react-redux";
 
 import StarSetRating from "@/components/component_utils/plant/starRating/StarSetRating";
-import StarRatingView from "@/components/component_utils/plant/starRating/StarRatingView";
 
-const ReviewTab = ({ data }) => {
+const ReviewTab = () => {
+  const pathname = usePathname();
+  const parts = pathname.split("/");
+  const plantId = parts[parts.length - 1];
+  const plantsReviews = useSelector(
+    (state) => state.review.plantsReviews[plantId]
+  );
+
+  const dispatch = useDispatch();
   const [curentRating, setCurrentRating] = useState(null);
-  const [reviewData, setReviewData] = useState(null);
+  const [reviewFields, setReviewFields] = useState({
+    review: "",
+    name: "",
+    email: "",
+  });
+
+  const handleFieldChange = (e) => {
+    const { name, value } = e.target;
+    setReviewFields((prevFields) => ({
+      ...prevFields,
+      [name]: value,
+    }));
+  };
 
   const handleRatingChange = (starRating) => {
-    setCurrentRating(starRating);
+    setCurrentRating(parseInt(starRating));
   };
 
   const HandleFormSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    setReviewData({
-      plantId: data,
-      name: formData.get("name"),
-      email: formData.get("email"),
-      review: formData.get("review"),
-      rating: curentRating,
-    });
+
+    const { review, name, email } = reviewFields;
+
+    if (review.trim() !== "" && name.trim() !== "" && email.trim() !== "") {
+      const commentData = {
+        plantId: plantId,
+        comment: review,
+        name: name,
+        email: email,
+        rating: curentRating !== null ? curentRating : undefined,
+      };
+      dispatch(addComment(commentData));
+      setReviewFields({
+        review: "",
+        name: "",
+        email: "",
+      });
+      setCurrentRating(null);
+    }
   };
-  console.log(reviewData);
 
   return (
     <section className={classes.reviewsContainer}>
-      <p className={classes.noReviews}>There are no Reviews yet.</p>
-
-      <div className={classes.individualPlantRating}>
-        <Image
-          src={"/anonymous.svg"}
-          width={65}
-          height={65}
-          alt="no Profile photo icon"
-          className={classes.profileImage}
-        />
-        <div>
-          <h2 className={classes.heading}>WIll</h2>
-          <StarRatingView rating={2} />
-          <p>I love It</p>
-        </div>
-      </div>
+      {!plantsReviews && (
+        <p className={classes.noReviews}>There are no Reviews yet.</p>
+      )}
+      <section className={classes.reviews}>
+        {plantsReviews &&
+          plantsReviews.map((item) => (
+            <ReviewTab_Comments
+              name={item.name}
+              comment={item.comment}
+              rating={item.rating}
+            />
+          ))}
+      </section>
 
       <div className={classes.formBorder}>
         <form action="" className={classes.gap} onSubmit={HandleFormSubmit}>
-          <h2>Be the first to review “Alocasia Regal Shield”</h2>
+          {!plantsReviews && (
+            <h2>Be the first to review “Alocasia Regal Shield”</h2>
+          )}
           <p className={classes.lessBold}>
             Your email address will not be published. Required fields are marked
             *
@@ -71,6 +103,9 @@ const ReviewTab = ({ data }) => {
               cols="30"
               rows="10"
               className={classes.inputTextArea}
+              value={reviewFields.review}
+              required
+              onChange={handleFieldChange}
             ></textarea>
           </div>
 
@@ -84,6 +119,9 @@ const ReviewTab = ({ data }) => {
                 id="nameInput"
                 name="name"
                 className={classes.input}
+                value={reviewFields.name}
+                onChange={handleFieldChange}
+                required
               />
             </div>
 
@@ -96,6 +134,9 @@ const ReviewTab = ({ data }) => {
                 id="emailInput"
                 name="email"
                 className={classes.input}
+                value={reviewFields.email}
+                onChange={handleFieldChange}
+                required
               />
             </div>
           </div>

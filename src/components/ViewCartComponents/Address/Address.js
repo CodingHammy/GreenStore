@@ -5,13 +5,22 @@ import { usePathname } from "next/navigation";
 import classes from "./Address.module.css";
 import { Countries } from "@/utils/countries";
 
+import { addUser } from "@/redux/features/authSlice";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/navigation";
+
 import Button from "@/components/component_utils/button/Button";
 
 const Address = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
   const pathname = usePathname();
   const isSignUpPage = pathname === "/signup";
 
+  const [notValid, setNotValid] = useState("");
+
   const [formdata, setFormData] = useState({
+    uid: "",
     email: "",
     confirmEmail: "",
     givenName: "",
@@ -23,6 +32,7 @@ const Address = () => {
     county: "",
     postcode: "",
     phoneNumber: "",
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -37,12 +47,35 @@ const Address = () => {
     e.preventDefault();
     if (isSignUpPage) {
       if (formdata.email !== formdata.confirmEmail) {
-        alert("EMAIL DON'T MATCH");
+        setNotValid("email");
+        alert("Email ");
         return;
       }
-    }
+      if (formdata.password !== formdata.confirmPassword) {
+        setNotValid("password");
+        alert("Password ");
+        return;
+      }
+      setNotValid("");
 
-    console.log("form Submitted", formdata);
+      dispatch(
+        addUser({
+          uid: Math.random(),
+          email: formdata.email,
+          givenName: formdata.givenName,
+          familyName: formdata.familyName,
+          country: formdata.country,
+          street: formdata.street,
+          flat: formdata.flat,
+          city: formdata.city,
+          county: formdata.county,
+          postcode: formdata.postcode,
+          phoneNumber: formdata.phoneNumber,
+          password: formdata.password,
+        })
+      );
+      router.push("/login");
+    }
   };
 
   return (
@@ -50,11 +83,16 @@ const Address = () => {
       <form action="" onSubmit={handleSignUp} className={classes.form}>
         <h2 className={classes.heading}>Customer information</h2>
         <div className={`${isSignUpPage ? classes.customerInfo : ""}`}>
-          {isSignUpPage && (
-            <label className={classes.signUpLabels} htmlFor="email">
-              Email Address
-            </label>
-          )}
+          {isSignUpPage &&
+            (notValid === "email" ? (
+              <label className={classes.notValidLabels} htmlFor="email">
+                Email Addresses don't match
+              </label>
+            ) : (
+              <label className={classes.signUpLabels} htmlFor="email">
+                Email Address
+              </label>
+            ))}
           <input
             onChange={handleChange}
             className={`${classes.input} ${classes.isSignUpPage}`}
@@ -68,16 +106,24 @@ const Address = () => {
             <Fragment>
               <input
                 onChange={handleChange}
-                className={`${classes.input} ${classes.isSignUpPage}`}
+                className={`${classes.input} ${classes.isSignUpPage} ${
+                  notValid === "email" ? classes.notValid : ""
+                }`}
                 type="email"
                 name="confirmEmail"
                 id="confirmEmail"
                 placeholder="Confirm Email Address *"
                 required
               />
-              <label className={classes.signUpLabels} htmlFor="password">
-                Password
-              </label>
+              {notValid === "password" ? (
+                <label className={classes.notValidLabels} htmlFor="password">
+                  Passwords don't match
+                </label>
+              ) : (
+                <label className={classes.signUpLabels} htmlFor="password">
+                  Password
+                </label>
+              )}
               <input
                 onChange={handleChange}
                 className={`${classes.input} ${classes.isSignUpPage}`}
@@ -89,7 +135,9 @@ const Address = () => {
               />
               <input
                 onChange={handleChange}
-                className={`${classes.input} ${classes.isSignUpPage}`}
+                className={`${classes.input} ${classes.isSignUpPage} ${
+                  notValid === "password" ? classes.notValid : ""
+                }`}
                 type="password"
                 name="confirmPassword"
                 id="confirmPassword"
@@ -126,9 +174,11 @@ const Address = () => {
           onChange={handleChange}
           required
         >
-          <option className={classes.options} value=""></option>
-          {Countries.map((item) => (
-            <option className={classes.options} value={item}>
+          <option className={classes.options} value="">
+            Select Country *
+          </option>
+          {Countries.map((item, i) => (
+            <option key={i} className={classes.options} value={item}>
               {item}
             </option>
           ))}

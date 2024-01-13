@@ -4,11 +4,15 @@ import Button from "@/components/component_utils/button/Button";
 
 import classes from "./Comment.module.css";
 
+const SubmitHandler = (e) => {
+  e.preventDefault();
+};
+
 const Comment = () => {
   return (
     <div className={classes.container}>
       <h2 className={classes.heading}>Drop us a line or two</h2>
-      <form action="submit">
+      <form action="submit" onSubmit={SubmitHandler}>
         <label className={classes.label} htmlFor="name">
           Name
         </label>
