@@ -6,7 +6,6 @@
 }
 
 .title {
-
   margin-top: 30px;
   padding-top: 30px;
   font-weight: 700;
@@ -14,6 +13,7 @@
 }
 
 .plantItems {
+  position: relative;
   margin-top: 30px;
   padding-top: 30px;
   display: flex;

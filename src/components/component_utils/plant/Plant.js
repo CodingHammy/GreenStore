@@ -54,14 +54,16 @@ const Plant = ({ plant }) => {
       onMouseEnter={displayEnterHandler}
     >
       <Link href={`/plants/${plant.id}`} className={classes.linkPlantPage}>
-        <Image
-          src={plant.src[0]}
-          priority
-          height={580}
-          width={386}
-          className={classes.imagePlant}
-          alt={`image of ${plant.title}`}
-        />
+        <div className={classes.imagePlant}>
+          <Image
+            layout="fill"
+            src={plant.src[0]}
+            priority
+            // height={580}
+            // width={386}
+            alt={`image of ${plant.title}`}
+          />
+        </div>
       </Link>
       <StarRatingView rating={ratingsForPlant} />
       <Link href={plant.src} className={classes.title}>

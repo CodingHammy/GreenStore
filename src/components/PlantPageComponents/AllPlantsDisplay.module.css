@@ -1,10 +1,9 @@
 .main {
   background-color: var(--color-4);
-  padding: 60px 0;
 }
 
 .wrapper {
-  width: 1400px;
+  width: 98vw;
   position: relative;
   margin: 0 auto;
   background-color: #fff;
@@ -14,17 +13,17 @@
   display: flex;
   justify-content: space-between;
 
-  margin: 0 7.5% 0 7.5%;
+  margin: 0 auto;
   padding: 60px 0 10px;
   align-items: center;
 }
 
 .headerText {
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  margin-top: 10px;
+  margin: 10px auto 0;
 }
 
 .clientPageAndFilter {
@@ -40,8 +39,6 @@
   align-items: center;
 }
 
-
-.divForFilteredCatergory {}
 
 .headerForFiltedCategory {
   font-size: 60px;
@@ -61,4 +58,12 @@
   height: 50px;
   padding: 0 10px;
   border: none;
+}
+
+
+
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    width: 1200px;
+  }
 }

@@ -2,6 +2,11 @@
   position: relative;
   margin: 40px 0;
   overflow: hidden;
+  height: 600px;
+  /* max-width: 400px; */
+  width: 30%;
+
+
 }
 
 
@@ -72,4 +77,13 @@
 
 .price {
   font-weight: 500;
+}
+
+.linkPlantPage {
+  position: relative;
+}
+
+.imagePlant {
+  height: 80%;
+
 }
