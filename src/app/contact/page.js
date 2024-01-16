@@ -13,6 +13,7 @@ const Contacts = () => {
     <main className={classes.something}>
       <section className={classes.text_container}>
         <ContactInfo />
+        <div className={classes.line}></div>
         <Comment />
       </section>
       <div className={classes.mapbox_contianer}>

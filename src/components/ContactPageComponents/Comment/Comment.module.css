@@ -1,7 +1,6 @@
 .container {
-  width: 45%;
-  padding-left: 50px;
-
+  max-width: 40%;
+  margin: auto;
 }
 
 .heading {
@@ -23,8 +22,6 @@
 
 .comment_box {
   height: 120px;
-
-
   margin: 5px 0 25px 0;
 }
 

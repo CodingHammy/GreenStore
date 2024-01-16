@@ -83,3 +83,10 @@
   letter-spacing: 1px;
   color: rgba(var(--color-r6)/1);
 }
+
+
+@media only screen and (max-width: 1350px) {
+  .container {
+    width: 40vw;
+  }
+}

@@ -1,11 +1,9 @@
 .container {
   position: relative;
   margin: 40px 0;
-  overflow: hidden;
-  height: 600px;
-  /* max-width: 400px; */
+  /* overflow: hidden; */
   width: 30%;
-
+  aspect-ratio: 1 / 2;
 
 }
 

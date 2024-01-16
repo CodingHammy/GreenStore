@@ -8,3 +8,8 @@
   max-width: 100%;
   overflow: hidden;
 }
+
+.line {
+  border-left: solid 1px rgba(var(--color-r3)/ .2);
+  margin: 0 40px 0 0;
+}

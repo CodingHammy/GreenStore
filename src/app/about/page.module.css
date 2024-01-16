@@ -1,6 +1,11 @@
 .container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 50px auto;
+}
+
+.wrapper {
+  width: 95%;
+  margin: auto;
 }
 
 .fake {
