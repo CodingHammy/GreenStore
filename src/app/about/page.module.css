@@ -10,7 +10,8 @@
 
 .fake {
   width: 100%;
-  height: 800px;
+  /* height: 800px; */
   margin: 70px 0;
+  aspect-ratio: 2 / 1.2;
   background-color: black;
 }

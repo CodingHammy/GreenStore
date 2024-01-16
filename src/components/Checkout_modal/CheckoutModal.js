@@ -48,17 +48,19 @@ const CheckoutModal = ({ handleCheckoutModalfalse }) => {
                 <ShoppingCart_items cartItem={item} key={item.id} />
               ))}
             </div>
-            <div className={classes.price}>
-              <h3 className={classes.price_title}>Subtotal:</h3>
-              <h3 className={classes.price_amount}>{grandTotal}</h3>
-            </div>
-            <div className={classes.buttons}>
-              <Button
-                width={"100%"}
-                value="View Cart"
-                onClick={handleViewCheckout}
-              />
-              <Button width={"100%"} value="Checkout" />
+            <div className={classes.bottom}>
+              <div className={classes.price}>
+                <h3 className={classes.price_title}>Subtotal:</h3>
+                <h3 className={classes.price_amount}>{grandTotal}</h3>
+              </div>
+              <div className={classes.buttons}>
+                <Button
+                  width={"100%"}
+                  value="View Cart"
+                  onClick={handleViewCheckout}
+                />
+                <Button width={"100%"} value="Checkout" />
+              </div>
             </div>
           </Fragment>
         ) : (
