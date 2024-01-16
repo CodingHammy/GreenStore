@@ -6,26 +6,30 @@ const FrontPageTokens = () => {
   return (
     <div className={classes.container}>
       <div className={classes.item}>
-        <Image
-          src="/lock.svg"
-          height={55}
-          width={55}
-          alt="secure payment icon"
-          className={classes.image}
-        />
+        <div>
+          <Image
+            src="/lock.svg"
+            height={55}
+            width={55}
+            alt="secure payment icon"
+            className={classes.image}
+          />
+        </div>
         <div className={classes.blurb}>
           <h6 className={classes.heading}>SECURE PAYMENT</h6>
           <p className={classes.paragraph}>Est at totam sunt qui, commodi.</p>
         </div>
       </div>
       <div className={classes.item}>
-        <Image
-          src="/package.svg"
-          height={55}
-          width={55}
-          alt="icon of a box"
-          className={classes.image}
-        />
+        <div>
+          <Image
+            src="/package.svg"
+            height={55}
+            width={55}
+            alt="icon of a box"
+            className={classes.image}
+          />
+        </div>
         <div className={classes.blurb}>
           <h6 className={classes.heading}>DELIVERED WITH CARE</h6>
           <p className={classes.paragraph}>
@@ -34,13 +38,15 @@ const FrontPageTokens = () => {
         </div>
       </div>
       <div className={classes.item}>
-        <Image
-          src="/care.svg"
-          height={55}
-          width={55}
-          alt="handled with care icon"
-          className={classes.image}
-        />
+        <div>
+          <Image
+            src="/care.svg"
+            height={55}
+            width={55}
+            alt="handled with care icon"
+            className={classes.image}
+          />
+        </div>
         <div className={classes.blurb}>
           <h6 className={classes.heading}>EXCELLENT SERVICE</h6>
           <p className={classes.paragraph}>

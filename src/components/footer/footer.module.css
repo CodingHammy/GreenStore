@@ -50,7 +50,7 @@
 }
 
 .input {
-  margin-left: 50px;
+  display: flex;
   height: 50px;
   width: 60%;
   font-size: 18px;
@@ -88,4 +88,36 @@
   justify-content: center;
   border-top: 1px solid rgba(104 103 103/.5);
   font-size: small;
+}
+
+
+/* @media only screen and (min-width: 1025px) {
+  .input {}
+}
+ */
+
+
+@media only screen and (max-width: 1024px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .input {
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .linksWrap {
+    margin-top: 80px;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-size: 16px;
+  }
 }

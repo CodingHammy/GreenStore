@@ -20,3 +20,20 @@
   width: 80%;
   gap: 25px;
 }
+
+@media only screen and (max-width: 800px) {
+  .plantItems {
+    width: 100%;
+    gap: 10px;
+  }
+
+}
+
+/* 
+@media only screen and (max-width: 650px) {
+  .plantItems {
+    flex-direction: column;
+    align-items: center;
+  }
+
+} */
