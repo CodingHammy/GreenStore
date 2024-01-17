@@ -1,7 +1,8 @@
 .text_container {
   display: flex;
   max-width: 1300px;
-  margin: 60px auto;
+  margin: auto;
+  padding: 60px 0;
 }
 
 .mapbox_contianer {

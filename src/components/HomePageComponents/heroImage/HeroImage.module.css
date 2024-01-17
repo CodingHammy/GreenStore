@@ -38,6 +38,7 @@
   text-align: center;
   font-weight: 500;
   font-size: 70px;
+  max-width: 800px;
 }
 
 .button {
@@ -46,4 +47,35 @@
   color: var(--color-2);
   background-color: var(--color-5);
   border: var(--color-5);
+}
+
+@media only screen and (max-width: 900px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .firstHeading {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+
+  .secondHeading {
+    font-size: 45px;
+  }
+
+  .firstHeading {
+    padding-bottom: 10px;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  .hero {
+    height: 55vh;
+  }
+
+  .secondHeading {
+    font-weight: 400;
+  }
 }

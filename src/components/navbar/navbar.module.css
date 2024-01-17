@@ -16,6 +16,18 @@
 
 }
 
+.hamburger_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger_button {
+  width: 35px;
+  height: 35px;
+}
+
+
 .container.initial {
   padding-bottom: 20px;
   /* Adjust the value as needed */
@@ -29,9 +41,7 @@
 
 .links {
   display: flex;
-  align-items: center;
-  width: 40%;
-  justify-content: space-between;
+  gap: 20px;
 }
 
 .checkout_button {
@@ -74,10 +84,33 @@
   display: flex;
 }
 
-@media (min-width: 1200px) {
-  .links {
-    width: 30%;
+.toggle_menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  z-index: 2;
+  padding: 25px 0 25px 40px;
+  font-size: 17px;
+  box-shadow: inset 0 -0.2px 1px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+  width: 100vw;
+}
+
+@media only screen and (min-width: 900px) {
+  .hamburger_buttons {
+    display: none;
+  }
+
+  .links_toggleDisplay {
+    display: flex;
+    gap: 1em;
   }
 }
 
-@media (max-width: 900px) {}
+@media only screen and (max-width: 900px) {
+  .links_toggleDisplay {
+    display: none;
+
+  }
+}
