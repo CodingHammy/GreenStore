@@ -10,3 +10,9 @@
 .button:hover {
   background-color: rgba(var(--color-r3)/.8);
 }
+
+@media only screen and (max-width: 500px) {
+  .button {
+    font-size: 12px;
+  }
+}

@@ -25,7 +25,7 @@ const Footer = () => {
             placeholder="Your email here..."
             className={classes.input}
           />
-          <Button value="Subscribe" width="30%" />
+          <Button value="Subscribe" width="33%" />
         </form>
         <div className={classes.social}>
           <Link href="/">

@@ -47,7 +47,6 @@ const NavBar = ({ handleCheckoutModalTrue }) => {
               />
             )}
           </button>
-          <button className={classes.hamburger_button}></button>
         </div>
         <Link href="/" className={classes.logo}>
           Greenstore

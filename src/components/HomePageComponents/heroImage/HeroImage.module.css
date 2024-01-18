@@ -23,7 +23,6 @@
   color: var(--color-5);
 }
 
-.firstHeading,
 .secondHeading {
   padding-bottom: 35px;
 }
@@ -78,4 +77,31 @@
   .secondHeading {
     font-weight: 400;
   }
+}
+
+
+@media only screen and (max-width: 450px) {
+
+  .firstHeading {
+    font-size: 15px;
+  }
+
+  .secondHeading {
+    width: 95%;
+    font-size: 38px;
+  }
+
+  .secondHeading {
+    padding-bottom: 20px;
+  }
+
+}
+
+
+@media only screen and (min-width: 450px) {
+
+  .firstHeading {
+    padding-bottom: 35px;
+  }
+
 }

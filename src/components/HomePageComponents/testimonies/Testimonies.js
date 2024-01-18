@@ -31,7 +31,7 @@ const Testimonies = () => {
     <div className={classes.container}>
       <h2 className={classes.header}>What Our Customers Say</h2>
       <div className={classes.borderBottom} />
-      <div className={classes.Testimonies}>
+      <div className={classes.testimonies}>
         {DUMMY_DATA.map((item) => (
           <Testimony data={item} key={item.name} />
         ))}

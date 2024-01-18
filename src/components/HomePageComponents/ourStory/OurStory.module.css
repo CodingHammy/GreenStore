@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   gap: 80px;
-  padding: 100px 0;
+  padding: 0 0 100px 0;
 }
 
 .imageContainer {
@@ -53,14 +53,14 @@
   }
 
   .imageContainer {
-    width: 90%;
+    width: 100%;
   }
 
   .blurbRight {
     position: absolute;
     bottom: 80px;
-    left: 10%;
-    width: 80%;
+    left: 5%;
+    width: 90%;
     background-color: white;
     padding: 35px;
   }
@@ -68,5 +68,54 @@
   .blurbRight,
   .imageContainer {
     margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .blurbRight {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    left: 0;
+    bottom: -240px;
+    padding: 25px;
+  }
+
+  .story {
+    margin-bottom: 320px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .blurbRight {
+    bottom: -240px;
+  }
+
+  .blurbSecondTitle {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .blurbText {
+    font-size: 14px;
+  }
+
+  .story {
+    margin-bottom: 320px;
+  }
+
+}
+
+@media only screen and (max-width: 350px) {
+  .story {
+    padding: 20px 0;
+  }
+
+  .blurbRight {
+    bottom: -380px;
+  }
+
+  .story {
+    margin-bottom: 300px;
   }
 }

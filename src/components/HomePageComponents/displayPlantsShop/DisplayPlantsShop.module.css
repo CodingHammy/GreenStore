@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px 40px 50px;
+
 }
 
 .shopHeader {
@@ -33,5 +33,27 @@
 @media only screen and (min-width: 1024px) {
   .shop {
     max-width: 1200px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .shopHead {
+    padding: 0 20px;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .shop {
+    padding-top: 60px;
+  }
+
+  .shopHead {
+    flex-direction: column;
+
+  }
+
+  .shopHeader {
+    padding-bottom: 20px;
   }
 }

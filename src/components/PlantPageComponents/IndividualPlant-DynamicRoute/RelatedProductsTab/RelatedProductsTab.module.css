@@ -29,11 +29,9 @@
 
 }
 
-/* 
-@media only screen and (max-width: 650px) {
-  .plantItems {
-    flex-direction: column;
-    align-items: center;
-  }
 
-} */
+@media only screen and (max-width: 550px) {
+  .plantItems {
+    flex-wrap: wrap;
+  }
+}
