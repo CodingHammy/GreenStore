@@ -119,6 +119,7 @@ const PlantDescription = ({ data }) => {
           <form action="" onSubmit={handleSubmit_AddToCart}>
             <input
               type="number"
+              id="amount"
               value={plantAddNumber}
               className={classes.addToCartInput}
               onChange={handleInputChange_addToCart}

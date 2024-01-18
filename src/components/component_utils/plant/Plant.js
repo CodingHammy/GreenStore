@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -56,9 +56,10 @@ const Plant = ({ plant }) => {
       <Link href={`/plants/${plant.id}`} className={classes.linkPlantPage}>
         <div className={classes.imagePlant}>
           <Image
-            layout="fill"
+            fill
             src={plant.src[0]}
             priority
+            sizes="(max-width: 768px) 100vw, 33vw"
             // height={580}
             // width={386}
             alt={`image of ${plant.title}`}
