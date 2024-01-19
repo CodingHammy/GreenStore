@@ -19,12 +19,7 @@ const CheckoutModal = ({ handleCheckoutModalfalse }) => {
 
   const cartItems = useSelector((state) => state.cart.items);
 
-  const handleViewCart = () => {
-    handleCheckoutModalfalse();
-    router.push("/viewCart");
-  };
-
-  const handleRedirectToCheckout = () => {
+  const handleViewCheckout = () => {
     handleCheckoutModalfalse();
     router.push("/checkout");
   };

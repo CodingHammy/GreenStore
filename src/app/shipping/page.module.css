@@ -1,0 +1,59 @@
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 60px 0;
+
+}
+
+.payment_container {
+  padding-top: 40px;
+  width: 55%;
+  margin: 0 auto;
+}
+
+
+.errorNoPaymentOption {
+  display: flex;
+  margin: 10px auto 0;
+  border: solid 1px rgba(var(--color-r3)/.2);
+  background-color: #cdddf834;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  align-items: center;
+}
+
+
+
+.updateCart_container {
+  display: flex;
+  justify-content: end;
+}
+
+.updateCart_container>* {
+  margin: 7px 50px;
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    padding: 20px 5% 20px 5%;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .titles {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+  .form {
+    border-top: solid 1px rgba(var(--color-r2)/.2);
+    border-left: solid 1px rgba(var(--color-r2)/.2);
+    border-right: solid 1px rgba(var(--color-r2)/.2);
+  }
+}

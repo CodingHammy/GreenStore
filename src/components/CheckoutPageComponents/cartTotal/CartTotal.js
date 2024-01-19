@@ -12,7 +12,7 @@ const CartTotal = () => {
   const grandTotal = useSelector(selectTotalPrice);
 
   const handleRedirectToCheckout = () => {
-    router.push("/checkout");
+    router.push("/shipping");
   };
 
   return (
