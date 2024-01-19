@@ -39,3 +39,15 @@
   border: solid 1px var(--color-6);
   border-radius: 50%;
 }
+
+@media only screen and (max-width: 500px) {
+  .title {
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .price {
+    font-weight: 200;
+    font-size: 13px;
+  }
+}

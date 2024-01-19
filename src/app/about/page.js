@@ -33,12 +33,14 @@ const galleryImages = [
 
 const About = () => {
   return (
-    <main className={classes.container}>
-      <Title_Section />
-      <div className={classes.fake}></div>
-      <Story_Section />
-      <Image_Gallery galleryImages={galleryImages} />
-    </main>
+    <section className={classes.container}>
+      <div className={classes.wrapper}>
+        <Title_Section />
+        <div className={classes.fake}></div>
+        <Story_Section />
+        <Image_Gallery galleryImages={galleryImages} />
+      </div>
+    </section>
   );
 };
 

@@ -1,7 +1,10 @@
 .container {
   position: relative;
-  margin: 40px 0;
+  /* margin: 40px 0; */
   overflow: hidden;
+  width: 32%;
+  aspect-ratio: .9 / 2;
+
 }
 
 
@@ -72,4 +75,28 @@
 
 .price {
   font-weight: 500;
+}
+
+.linkPlantPage {
+  position: relative;
+}
+
+.imagePlant {
+  position: relative;
+  height: 70%;
+
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width:650px) and (min-width:550px) {
+
+
+  .title {
+    font-size: 14px;
+  }
 }

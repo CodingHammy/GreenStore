@@ -13,7 +13,7 @@ const Mapbox = () => {
           longitude: -0.13669430446444675,
           zoom: 15.5,
         }}
-        style={{ width: 1900, height: 350 }}
+        style={{ width: "100vw", height: 350 }}
         mapStyle="mapbox://styles/mapbox/light-v11"
         mapboxAccessToken={MAP_API}
       >

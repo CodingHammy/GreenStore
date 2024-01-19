@@ -82,3 +82,42 @@
   font-size: 16px;
   border: rgba(var(--color-r0)/03) solid 1px;
 }
+
+
+@media only screen and (max-width: 1023px) {
+  .mainImageBox {
+    height: 55%;
+  }
+
+  .boldFilter {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 863px) {
+  .mainImageBox {
+    height: 50%;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin-bottom: 100px;
+  }
+
+  .mainImageBox {
+    height: 80%;
+  }
+
+  .displayMain,
+  .imageBoxLeft {
+    width: 100%;
+  }
+
+  .displayMain {
+    gap: 10px;
+  }
+
+}

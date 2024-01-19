@@ -79,13 +79,6 @@ const AllPlantsDisplay = ({ PLANT_DATA, params }) => {
                   ? `Showing ${lowerNumberViewingItemsBetween} - ${higherNumberViewingItemsBetween} of ${filteredData.length} results`
                   : `Showing all ${filteredData.length} results`}
               </p>
-
-              {/* <select name="filter" id="filter" className={classes.filter}>
-                <option value="by age" className={classes.options}>
-                  by age
-                </option>
-              </select> */}
-              {/* still need to work on filter */}
             </div>
           </div>
         </div>

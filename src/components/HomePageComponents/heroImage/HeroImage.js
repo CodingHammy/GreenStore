@@ -20,7 +20,7 @@ const HeroImage = ({ onClick }) => {
       <div className={classes.overlayTextContainer}>
         <h2 className={classes.firstHeading}>WELCOME TO THE GREENSTORE</h2>
         <h2 className={classes.secondHeading}>
-          Let’s Bring the Spring to <br /> Your Home
+          Let’s Bring the Spring to Your Home
         </h2>
         <button className={classes.button} onClick={onClick}>
           Shop Now

@@ -34,7 +34,7 @@ const CheckoutPage_items = ({ cartItems, handleDeleteItem }) => {
 
   return (
     <Fragment>
-      <div className={classes.titles}>
+      <div className={classes.container}>
         <div className={classes.catergory_title_quarter}>
           <button className={classes.button} onClick={onDeleteItemClick}>
             <Image
@@ -58,7 +58,9 @@ const CheckoutPage_items = ({ cartItems, handleDeleteItem }) => {
         <h6 className={classes.catergory_title_productName}>
           {cartItems.name}
         </h6>
-        <h6 className={classes.catergory_title}>{cartItems.price}</h6>
+        <h6 className={`${classes.catergory_title} ${classes.unitPrice}`}>
+          {cartItems.price}
+        </h6>
         <div className={`${classes.catergory_title} ${classes.amountSection}`}>
           <button className={classes.button} onClick={handleRemoveItem}>
             <Image
@@ -69,7 +71,9 @@ const CheckoutPage_items = ({ cartItems, handleDeleteItem }) => {
               alt={"add item button"}
             />
           </button>
-          {cartItems.amount}
+          <p className={classes.verticalAlign_amountLetters}>
+            {cartItems.amount}
+          </p>
           <button className={classes.button} onClick={handleAddItem}>
             <Image
               className={classes.circle}
@@ -80,7 +84,7 @@ const CheckoutPage_items = ({ cartItems, handleDeleteItem }) => {
             />
           </button>
         </div>
-        <h6 className={classes.catergory_title}>
+        <h6 className={`${classes.catergory_title} ${classes.totalPrice}`}>
           {Intl.NumberFormat("en-nz", {
             style: "currency",
             currency: "nzd",

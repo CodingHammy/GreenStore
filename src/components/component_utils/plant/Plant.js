@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -54,14 +54,17 @@ const Plant = ({ plant }) => {
       onMouseEnter={displayEnterHandler}
     >
       <Link href={`/plants/${plant.id}`} className={classes.linkPlantPage}>
-        <Image
-          src={plant.src[0]}
-          priority
-          height={580}
-          width={386}
-          className={classes.imagePlant}
-          alt={`image of ${plant.title}`}
-        />
+        <div className={classes.imagePlant}>
+          <Image
+            fill
+            src={plant.src[0]}
+            priority
+            sizes="(max-width: 768px) 100vw, 33vw"
+            // height={580}
+            // width={386}
+            alt={`image of ${plant.title}`}
+          />
+        </div>
       </Link>
       <StarRatingView rating={ratingsForPlant} />
       <Link href={plant.src} className={classes.title}>

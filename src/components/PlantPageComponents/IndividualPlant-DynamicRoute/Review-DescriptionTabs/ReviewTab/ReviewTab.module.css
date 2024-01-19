@@ -82,3 +82,14 @@
 .reviews {
   padding-bottom: 20px;
 }
+
+@media only screen and (max-width: 768px) {
+  .detailsContainer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .detailsInput {
+    width: 100%;
+  }
+}

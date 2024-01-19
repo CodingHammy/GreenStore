@@ -26,9 +26,3 @@ export const selectTotalQuantity = createSelector(
     return items.reduce((total, item) => total + item.amount, 0);
   }
 );
-
-export const selectTotalReviewsForPlant = (state) => (plantId) => {
-  const plantReviews = state.review.plantsReviews[plantId];
-
-  return plantReviews ? plantReviews.length : 0;
-};

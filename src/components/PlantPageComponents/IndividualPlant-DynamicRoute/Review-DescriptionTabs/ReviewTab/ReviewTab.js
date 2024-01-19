@@ -44,8 +44,12 @@ const ReviewTab = () => {
     e.preventDefault();
 
     const { review, name, email } = reviewFields;
-
-    if (review.trim() !== "" && name.trim() !== "" && email.trim() !== "") {
+    if (
+      review.trim() !== "" &&
+      name.trim() !== "" &&
+      email.trim() !== "" &&
+      [1, 2, 3, 4, 5].includes(curentRating)
+    ) {
       const commentData = {
         plantId: plantId,
         comment: review,
@@ -122,6 +126,7 @@ const ReviewTab = () => {
                 value={reviewFields.name}
                 onChange={handleFieldChange}
                 required
+                autoComplete="given-name"
               />
             </div>
 
@@ -137,6 +142,7 @@ const ReviewTab = () => {
                 value={reviewFields.email}
                 onChange={handleFieldChange}
                 required
+                autoComplete="email"
               />
             </div>
           </div>

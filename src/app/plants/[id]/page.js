@@ -5,21 +5,21 @@ import PlantDescription from "@/components/PlantPageComponents/IndividualPlant-D
 import ReviewAndDescriptionTabs from "@/components/PlantPageComponents/IndividualPlant-DynamicRoute/Review-DescriptionTabs/Review-DescriptionTabs";
 import RelatedProductsTab from "@/components/PlantPageComponents/IndividualPlant-DynamicRoute/RelatedProductsTab/RelatedProductsTab";
 import { useSelector } from "react-redux";
-import { selectTotalReviewsForPlant } from "@/redux/features/selectTotals";
 
 import { PLANT_DATA } from "@/utils/format";
 
 const PlantPage = ({ params }) => {
-  const totalReviewsSelector = useSelector(selectTotalReviewsForPlant);
   const plantId = params.id;
-  const paramsMinusOne = params.id - 1;
-  const data = PLANT_DATA[paramsMinusOne]; // look at again i don't think it is a good idea to have the data saved to the id because you add more with random id then this won't work
 
-  const getTotalReviews = (plantId) => {
-    return totalReviewsSelector(plantId);
+  const selectTotalReviewsForPlant = (state) => {
+    const plantReviews = state.review.plantsReviews[plantId];
+    return plantReviews ? plantReviews.length : 0;
   };
 
-  const totalReviews = getTotalReviews(plantId);
+  const totalReviews = useSelector(selectTotalReviewsForPlant);
+
+  const paramsMinusOne = params.id - 1;
+  const data = PLANT_DATA[paramsMinusOne]; // look at again i don't think it is a good idea to have the data saved to the id because you add more with random id then this won't work
 
   return (
     <div className={classes.wrapper}>

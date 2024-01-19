@@ -21,11 +21,13 @@ const Footer = () => {
         <form className={classes.form}>
           <input
             id="newsLetter"
+            name="newsLetter"
             type="text"
             placeholder="Your email here..."
             className={classes.input}
+            autoComplete="email"
           />
-          <Button value="Subscribe" />
+          <Button value="Subscribe" width="33%" />
         </form>
         <div className={classes.social}>
           <Link href="/">

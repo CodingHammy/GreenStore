@@ -10,7 +10,6 @@
   position: absolute;
   z-index: -10;
   aspect-ratio: 65/45;
-  /* object-position: 0 -160px; */
   transform: rotateY(180deg);
   z-index: -1;
 }
@@ -23,6 +22,9 @@
   align-items: center;
   justify-content: center;
   gap: 30px 0;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .firstHeader {
@@ -45,13 +47,36 @@
 }
 
 .button {
-  width: 120px;
+  width: 220px;
   height: 50px;
   margin-top: 10px;
-  width: 11%;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: .5px;
 
   z-index: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-height: 400px;
+  }
+
+  .firstHeader {
+    font-size: 16px;
+  }
+
+  .secondHeader {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .image {
+    aspect-ratio: 65/45;
+  }
+
+  .button {
+    font-size: 12px;
+    width: 160px;
+  }
 }
