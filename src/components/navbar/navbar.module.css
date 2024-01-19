@@ -114,3 +114,9 @@
 
   }
 }
+
+@media only screen and (max-width: 350px) {
+  .logo {
+    font-size: 23px;
+  }
+}

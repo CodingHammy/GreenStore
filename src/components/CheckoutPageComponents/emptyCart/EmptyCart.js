@@ -14,7 +14,9 @@ const EmptyCart = () => {
         height={20}
         alt={"delete item button"}
       />
-      <p>Your cart is currently empty.</p>
+      <p className={classes.emptyCart_paragraph}>
+        Your cart is currently empty.
+      </p>
     </div>
   );
 };
