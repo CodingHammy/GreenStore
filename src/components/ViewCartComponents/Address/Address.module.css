@@ -18,7 +18,7 @@
 }
 
 .form {
-  width: 55%;
+  width: 100%;
 }
 
 .input {
@@ -90,4 +90,11 @@
   border-radius: 3px;
   outline: solid 1px red;
   box-shadow: none;
+}
+
+@media only screen and (max-width:450px) {
+  .fitInForm {
+    flex-direction: column;
+  }
+
 }

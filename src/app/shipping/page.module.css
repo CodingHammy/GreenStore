@@ -1,16 +1,20 @@
 .container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 60px 0;
+
 
 }
 
 .payment_container {
   padding-top: 40px;
-  width: 55%;
+  width: 100%;
   margin: 0 auto;
 }
 
+.wrapper {
+  width: 55%;
+  margin: 0 auto;
+}
 
 .errorNoPaymentOption {
   display: flex;
@@ -35,11 +39,20 @@
   margin: 7px 50px;
 }
 
-@media only screen and (max-width: 900px) {
-  .container {
-    padding: 20px 5% 20px 5%;
+.windowIcon {
+  margin: 0 10px;
+}
+
+.error_message {
+  margin-right: 15px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .wrapper {
+    width: 85%;
   }
 }
+
 
 
 @media only screen and (max-width: 768px) {
@@ -47,9 +60,15 @@
     display: none;
   }
 
+  .wrapper {
+    width: 95%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
+  .container {
+    padding: 60px 0;
+  }
 
   .form {
     border-top: solid 1px rgba(var(--color-r2)/.2);

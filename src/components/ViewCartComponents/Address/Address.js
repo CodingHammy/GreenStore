@@ -16,6 +16,7 @@ const Address = () => {
   const router = useRouter();
   const pathname = usePathname();
   const isSignUpPage = pathname === "/signup";
+  // const isSignUpPage = true;
 
   const [notValid, setNotValid] = useState("");
 
@@ -100,6 +101,7 @@ const Address = () => {
             name="email"
             id="email"
             placeholder="Email Address *"
+            autoComplete="email"
             required
           />
           {isSignUpPage && (
@@ -113,6 +115,7 @@ const Address = () => {
                 name="confirmEmail"
                 id="confirmEmail"
                 placeholder="Confirm Email Address *"
+                autoComplete="email"
                 required
               />
               {notValid === "password" ? (
@@ -148,13 +151,14 @@ const Address = () => {
           )}
         </div>
         <h2 className={classes.heading}>Billing details</h2>
-        <div className={classes.fitInForm}>
+        <div className={`${classes.fitInForm} ${classes.col}`}>
           <input
             onChange={handleChange}
             className={classes.input}
             type="text"
             name="givenName"
             placeholder="Given Name *"
+            autoComplete="given-name"
             required
           />
           <input
@@ -163,6 +167,7 @@ const Address = () => {
             type="text"
             name="familyName"
             placeholder="Family Name *"
+            autoComplete="family-name"
             required
           />
         </div>
@@ -171,6 +176,7 @@ const Address = () => {
           name="country"
           id="country"
           placeholder="Country/Region *"
+          autoComplete="country-name"
           onChange={handleChange}
           required
         >
@@ -183,7 +189,7 @@ const Address = () => {
             </option>
           ))}
         </select>
-        <div className={classes.fitInForm}>
+        <div className={`${classes.fitInForm} ${classes.col}`}>
           <input
             onChange={handleChange}
             className={classes.input}
@@ -201,7 +207,7 @@ const Address = () => {
             placeholder="Flat, apartment, etc"
           />
         </div>
-        <div className={classes.fitInForm}>
+        <div className={`${classes.fitInForm} ${classes.col}`}>
           <input
             onChange={handleChange}
             className={classes.input}
@@ -225,6 +231,7 @@ const Address = () => {
             type="text"
             name="postcode"
             id="postcode"
+            autoComplete="postal-code"
             placeholder="Postcode *"
             required
           />
@@ -236,10 +243,11 @@ const Address = () => {
           name="phoneNumber"
           id="phoneNumber"
           placeholder="Phone *"
+          autoComplete="tel"
           required
         />
         <div className={classes.buttonContainer}>
-          <Button value="Sign up" />
+          {/* <Button value="Sign up" /> */}
         </div>
       </form>
     </section>

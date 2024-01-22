@@ -14,16 +14,49 @@
   width: 60%;
 }
 
-.itemName {
-  margin-left: 10px;
-}
-
-.amount {
-  width: 10%;
-}
-
 .subTotal {
-  width: 30%;
   display: flex;
   justify-content: end;
+}
+
+@media only screen and (min-width: 550px) {
+  .itemName {
+    margin-left: 10px;
+  }
+
+  .amount {
+    width: 10%;
+  }
+
+  .subTotal {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+
+  .itemName,
+  .amount,
+  .subTotal {
+    position: absolute;
+  }
+
+  .itemName {
+    left: 100px;
+  }
+
+  .amount,
+  .itemName {
+    font-weight: 600;
+    top: 22px;
+  }
+
+  .subTotal,
+  .amount {
+    right: 20px;
+  }
+
+  .subTotal {
+    bottom: 20px;
+  }
 }

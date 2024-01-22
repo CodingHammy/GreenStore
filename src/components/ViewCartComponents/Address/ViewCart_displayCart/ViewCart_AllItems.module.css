@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 55%;
+  width: 100%;
 
 }
 
@@ -13,10 +13,6 @@
   font-weight: 500;
 }
 
-.border {
-  border: solid 1px rgba(var(--color-r2)/.2);
-  border-radius: 3px;
-}
 
 .total,
 .subtotal,
@@ -33,8 +29,6 @@
 
 
 .titles {
-  border-bottom: solid 1px rgba(var(--color-r2)/.2);
-  color: rgba(var(--color-r2)/.8);
   font-weight: 600;
 }
 
@@ -47,4 +41,17 @@
   padding: 30px;
   font-weight: 700;
   font-size: 18px;
+}
+
+@media only screen and (min-width: 550px) {
+  .titles {
+    border-bottom: solid 1px rgba(var(--color-r2)/.2);
+    color: rgba(var(--color-r2)/.8);
+  }
+
+  .border {
+    border: solid 1px rgba(var(--color-r2)/.2);
+    border-radius: 3px;
+  }
+
 }
