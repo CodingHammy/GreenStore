@@ -9,10 +9,11 @@ const reviewSlice = createSlice({
   initialState,
   reducers: {
     addComment: (state, action) => {
-      const { plantId, rating, comment, name, email } = action.payload;
+      const { plantId, rating, comment, name, email, id } = action.payload;
 
       if (state.plantsReviews[plantId]) {
         state.plantsReviews[plantId].push({
+          id,
           rating,
           comment,
           name,
@@ -21,6 +22,7 @@ const reviewSlice = createSlice({
       } else {
         state.plantsReviews[plantId] = [
           {
+            id,
             rating,
             comment,
             name,

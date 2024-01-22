@@ -46,7 +46,7 @@ const DescriptionTab = () => {
           </li>
           <li className={classes.listItem}>
             <span className={classes.spaceFromBullet}>
-              Class aptent taciti sociosqu
+              Clop aptent taciti sociosqu
             </span>
           </li>
           <li className={classes.listItem}>

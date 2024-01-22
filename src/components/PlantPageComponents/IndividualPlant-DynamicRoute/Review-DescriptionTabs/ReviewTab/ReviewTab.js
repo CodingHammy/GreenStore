@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Button from "@/components/component_utils/button/Button";
 
+import { v4 as uuidv4 } from "uuid";
 import classes from "./ReviewTab.module.css";
 import ReviewTab_Comments from "./ReviewTab_Comments/ReviewTab_Comments";
 import { usePathname } from "next/navigation";
@@ -13,6 +14,7 @@ import { useDispatch } from "react-redux";
 import StarSetRating from "@/components/component_utils/plant/starRating/StarSetRating";
 
 const ReviewTab = () => {
+  const myUuid = uuidv4();
   const pathname = usePathname();
   const parts = pathname.split("/");
   const plantId = parts[parts.length - 1];
@@ -23,6 +25,7 @@ const ReviewTab = () => {
   const dispatch = useDispatch();
   const [curentRating, setCurrentRating] = useState(null);
   const [reviewFields, setReviewFields] = useState({
+    id: "",
     review: "",
     name: "",
     email: "",
@@ -50,8 +53,10 @@ const ReviewTab = () => {
       email.trim() !== "" &&
       [1, 2, 3, 4, 5].includes(curentRating)
     ) {
+      let uuid = myUuid;
       const commentData = {
         plantId: plantId,
+        id: uuid,
         comment: review,
         name: name,
         email: email,
@@ -59,6 +64,7 @@ const ReviewTab = () => {
       };
       dispatch(addComment(commentData));
       setReviewFields({
+        id: "",
         review: "",
         name: "",
         email: "",
@@ -76,6 +82,7 @@ const ReviewTab = () => {
         {plantsReviews &&
           plantsReviews.map((item) => (
             <ReviewTab_Comments
+              key={item.id}
               name={item.name}
               comment={item.comment}
               rating={item.rating}

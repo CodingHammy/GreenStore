@@ -3,7 +3,7 @@
 import NavBar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import CheckoutModal from "@/components/Checkout_modal/CheckoutModal";
-import { useState, useRef, useEffect, Fragment } from "react";
+import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import classes from "./LayoutClientSide.module.css";
 
