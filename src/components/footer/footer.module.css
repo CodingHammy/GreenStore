@@ -91,6 +91,11 @@
 }
 
 
+.after_form {
+  word-spacing: 2px;
+  font-size: 15px;
+}
+
 /* @media only screen and (min-width: 1025px) {
   .input {}
 }

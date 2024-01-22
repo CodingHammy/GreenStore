@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/legacy/image";
 import Button from "../component_utils/button/Button";
@@ -6,6 +6,19 @@ import Button from "../component_utils/button/Button";
 import classes from "./footer.module.css";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    //something with email
+    setSubscribed(true);
+  };
+
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
+
   return (
     <div className={classes.container}>
       <div className={classes.linksWrap}>
@@ -18,17 +31,25 @@ const Footer = () => {
       </div>
       <div className={classes.subscribe}>
         <h2 className={classes.header}>Subscribe to our newsletter</h2>
-        <form className={classes.form}>
-          <input
-            id="newsLetter"
-            name="newsLetter"
-            type="text"
-            placeholder="Your email here..."
-            className={classes.input}
-            autoComplete="email"
-          />
-          <Button value="Subscribe" width="33%" />
-        </form>
+        {!subscribed ? (
+          <form onSubmit={submitHandler} className={classes.form}>
+            <input
+              id="newsLetter"
+              name="newsLetter"
+              value={email}
+              onChange={handleChange}
+              type="text"
+              placeholder="Your email here..."
+              className={classes.input}
+              autoComplete="email"
+            />
+            <Button value="Subscribe" width="33%" />
+          </form>
+        ) : (
+          <p className={classes.after_form}>
+            Thanks for signing up for the newsletter! We'll be in touch soon.
+          </p>
+        )}
         <div className={classes.social}>
           <Link href="/">
             <Image
