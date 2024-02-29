@@ -21,7 +21,7 @@ const StarRatingView = ({ rating }) => {
   const emptyStars = Array.from({ length: starsLeftOutOfFive }, (_, index) => (
     <div key={index}>
       <Image
-        src={"/EmptyStar.svg"}
+        src={"/emptyStar.svg"}
         width={16}
         height={16}
         alt="empty star icon"
