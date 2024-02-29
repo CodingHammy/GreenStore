@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  height: calc(100% - 65px);
+  height: calc(100vh - 65px);
 }
 
 .header {
