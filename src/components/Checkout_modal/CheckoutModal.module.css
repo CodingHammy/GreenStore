@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 100%;
   width: 35vw;
   background-color: white;
   z-index: 100;
@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  height: calc(100vh - 65px);
+  height: calc(100% - 65px);
 }
 
 .header {
