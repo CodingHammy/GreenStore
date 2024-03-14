@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a personal website aimed at showcasing the knowledge I have acquired over the past 24 months in web development. The site is built using a variety of technologies, including JavaScript, React, CSS, Next.js, Redux, and Firebase.
+This project is a personal website aimed at showcasing the knowledge I have acquired over the past 24 months in web development. The site is built using a variety of technologies, including JavaScript, React, CSS, Next.js, and Redux.
 
 ## Features
 
